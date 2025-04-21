@@ -1,0 +1,47 @@
+<div class="w-full flex flex-row">
+  <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
+    <div class="flex flex-column gap-2">
+      <label for="name">Name</label>
+      <input
+        formControlName="name"
+        class="input"
+        pInputText
+        id="name"
+        aria-describedby="username-help"/>
+    </div>
+      <div class="flex flex-column gap-2">
+        <label for="severity">Severity</label>
+        <input
+          formControlName="severity"
+          class="input"
+          pInputText
+          id="severity"
+          aria-describedby="username-help"/>
+      </div>
+      <div class="card flex flex-column gap-2 justify-content-center">
+        <label for="date" class=""> Result date </label>
+        <p-calendar
+          class="input"
+          formControlName="diagnosisDate"
+          id="date"
+          [iconDisplay]="'input'"
+          [showIcon]="true"
+          inputId="icondisplay"/>
+      </div>
+      <div class="card flex justify-content-center mt-4">
+        <p-button  label="Add disease" class="button-secondary" type="submit"/>
+      </div>
+    </form>
+    <p-divider layout="vertical"/>
+    <div class="w-full flex-column results-container" >
+      <p *ngIf="diseases.length==0">
+        No diseases found
+      </p>
+      <div *ngFor="let result of diseases" class="medical-result mb-4">
+        <div>Name: {{ result.name }}</div>
+        <div>Severity: {{ result.severity }}</div>
+        <div>Diagnosis date: {{ result.diagnosisDate }}</div>
+        <hr/>
+      </div>
+    </div>
+</div>

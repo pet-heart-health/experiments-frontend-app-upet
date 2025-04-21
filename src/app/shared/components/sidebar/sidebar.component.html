@@ -1,0 +1,17 @@
+<aside class="fixed  top-16 left-0 h-[calc(100vh-4rem)] overflow-y-auto bg-white text-white">
+    <div [ngClass]="{'w-20': isCollapsed, 'w-64': !isCollapsed}"
+         class="h-full bg-customSidebar text-customBlue transition-width duration-300" (mouseenter)="expandSidebar()"
+         (mouseleave)="collapseSidebar()">
+        <ul class="space-y-2 p-4">
+            <li *ngFor="let option of options">
+                <a [routerLink]="option.link" routerLinkActive="active"
+                   (click)="handleOptionClick(option)"
+                   class="block py-2 px-4 rounded hover:bg-gray-700 hover:text-white flex items-center justify-center">
+                    <span *ngIf="!isCollapsed">{{ option.label }}</span>
+                    <span *ngIf="isCollapsed" class="text-center"><i
+                            [class]="option.icon + ' text-customBlue'"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

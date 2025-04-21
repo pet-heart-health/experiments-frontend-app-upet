@@ -1,0 +1,11 @@
+<div class="my-vets-container mt-5 mb-5">
+  <div class="header">
+    <div class="title">Clinics Nearby</div>
+    <div class="view-all">
+      <button class="btn-primary" (click)="redirectToAllClinics()">+ View all</button>
+    </div>
+  </div>
+  <div class="vets-wrapper mx-auto">
+    <app-clinic-card *ngFor="let clinic of clinics" [clinic]="clinic" ></app-clinic-card>
+  </div>
+</div>

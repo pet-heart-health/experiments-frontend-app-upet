@@ -1,0 +1,33 @@
+.subtitle{
+  font-size: 1.01rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.pet, .vet{
+  width:300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.img-container{
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+  overflow: hidden;
+}
+.img-container img{
+  width: 100%;
+  border-radius:100%;
+  object-fit: cover;
+}
+.card-clickable{
+  cursor: pointer;
+}
+.card-clickable:hover{
+  background-color: #f5f5f5;
+}
+.custom-textarea{
+  resize: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 5px var(--color-button-secondary);
+}

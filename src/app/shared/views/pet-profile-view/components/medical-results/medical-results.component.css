@@ -1,0 +1,28 @@
+.button-secondary{
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.button-secondary:hover{
+  background-color: var(--color-button-secondary-hover);
+}
+.form-medical-result{
+  padding:15px;
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Ajusta el ancho máximo según sea necesario */
+  margin: 0 auto; /* Centra el contenedor */
+  background: #fff; /* Fondo blanco para la cinta */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+}
+.input{
+  background-color:whitesmoke;
+}
+.results-container{
+  max-height: 300px;
+  overflow-y: auto;
+
+}

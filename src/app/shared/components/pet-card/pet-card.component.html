@@ -1,0 +1,20 @@
+<div class="card-pet">
+  <div class="card-pet-content">
+    <div class="card-pet-img-container">
+      <img [src]="pet.image_url" alt="Golden retriever">
+    </div>
+    <h2 class="card-pet-title">{{ pet.name }}</h2>
+  </div>
+  <div class="card-pet-actions">
+    <button class="delete-button" (click)="toProfile()">
+      <i class="pi pi-eye"></i> View
+    </button>
+    <button class="edit-button" (click)="openDialogEdit()">
+      <i class="pi pi-pencil"></i> Edit
+    </button>
+  </div>
+</div>
+
+<p-dialog header="Edit pet" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
+  <app-form-add-pet [pet]="pet" [closeDialog]="closeDialogEdit" [mode]="TypeForm.EDIT"></app-form-add-pet>
+</p-dialog>

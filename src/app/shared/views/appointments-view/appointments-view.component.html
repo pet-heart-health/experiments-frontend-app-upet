@@ -1,0 +1,14 @@
+<div class="">
+  <div class="title-section">
+    Appointments
+  </div>
+  <div class="card flex-row flex justify-content-center align-items-center">
+    <p-tabMenu [model]="views" [(activeItem)]="activeView" />
+  </div>
+  <div *ngIf="activeView.label=='Upcoming'" class="appointments-container">
+    <app-appointment-card *ngFor="let appointment of upcomingAppointments" [appointment]="appointment" [isPast]="false"></app-appointment-card>
+  </div>
+  <div *ngIf="activeView.label=='Past'" class="appointments-container">
+    <app-appointment-card *ngFor="let appointment of pastAppointments" [appointment]="appointment" [isPast]="true"></app-appointment-card>
+  </div>
+</div>

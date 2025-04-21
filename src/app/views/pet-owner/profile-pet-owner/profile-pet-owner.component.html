@@ -1,0 +1,84 @@
+<div class="profile-container flex flex-column w-full justify-content-center align-items-center">
+  <h1 class="title-section">My Profile</h1>
+  <div class="pt-4 header flex flex-column w-full justify-content-center align-items-center">
+    <div class="container-image">
+      <img [src]="profile.image_url" alt="fadf"/>
+    </div>
+    <div>
+      <div class="name">{{profile.name}}</div>
+    </div>
+    <div class="btn-container">
+      <button (click)="openDialog()"> Editar perfil</button>
+    </div>
+  </div>
+  <div class="general-information pl-4 mt-4 gap-2 flex flex-column">
+    <div class="section-title">General information:</div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-phone"></span>
+      </div>
+      <div class="field-text">
+        {{profile.numberPhone}}
+      </div>
+    </div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-envelope"></span>
+      </div>
+      <div class="field-text">
+        {{userClaims.sub}}
+      </div>
+    </div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-map-marker"></span>
+      </div>
+      <div class="field-text">
+        {{profile.location}}
+      </div>
+    </div>
+  </div>
+</div>
+<p-dialog header="Edit profile" [modal]="true" [(visible)]="dialogVisible" [style]="{ width: '40rem' }">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="add-pet-form">
+    <div class="card flex justify-content-center align-items-center flex-column">
+      <p-toast></p-toast>
+      <div class="image-preview" *ngIf="imageUrl">
+        <img [src]="imageUrl" alt="Vista previa" />
+      </div>
+      <p-fileUpload
+        mode="basic"
+        name="demo[]"
+        chooseIcon="pi pi-upload"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000"
+        [auto]="true"
+        (onSelect)="onImageSelect($event)"
+        chooseLabel="upload photo">
+      </p-fileUpload>
+    </div>
+    <div class="card flex justify-content-center mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="name" formControlName="name" />
+        <label for="name"><span class="pi pi-user"></span>Name</label>
+      </p-floatLabel>
+    </div>
+    <div class="card flex justify-content-center mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="phone" formControlName="phone_number" />
+        <label for="name"><span class="pi pi-phone"></span>Phone number</label>
+      </p-floatLabel>
+    </div>
+    <div class="card flex justify-content-center mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="location" formControlName="location" />
+        <label for="name"><span class="pi pi-map-marker"></span> Location</label>
+      </p-floatLabel>
+    </div>
+    <div class="flex justify-content-around gap-2 mb-4">
+      <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()" />
+      <p-button label="Save" (onClick)="submitForm()"/>
+    </div>
+  </form>
+</p-dialog>

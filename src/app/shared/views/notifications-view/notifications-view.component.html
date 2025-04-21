@@ -1,0 +1,9 @@
+<div class="w-full">
+    <div class="title-section">Notifications</div>
+    <div class="w-full">
+        <div *ngIf="notifications.length===0" class="mt-4">
+            <div class="text-center">No notifications</div>
+        </div>
+        <app-notification-card *ngFor="let notification of notifications" [notification]="notification"></app-notification-card>
+    </div>
+</div>

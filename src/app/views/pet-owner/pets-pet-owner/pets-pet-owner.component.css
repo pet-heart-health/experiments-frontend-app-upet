@@ -1,0 +1,15 @@
+.btn-primary {
+  @apply border-none py-2 px-4 rounded-lg cursor-pointer transition-all text-gray-500;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-900 text-white;
+}
+
+.pets-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items:center;
+    align-items:center;
+}

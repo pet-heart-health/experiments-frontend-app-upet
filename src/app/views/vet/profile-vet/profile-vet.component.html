@@ -1,0 +1,111 @@
+<div class="profile-container flex flex-column w-full justify-content-center align-items-center">
+  <h1 class="title-section">My Profile</h1>
+  <div class="pt-4 header flex flex-column w-full justify-content-center align-items-center">
+    <div class="container-image">
+      <img [src]="profile.image_url" alt="fadf"/>
+    </div>
+    <div>
+      <div class="name">{{ profile.name }}</div>
+    </div>
+    <div class="btn-container">
+      <button (click)="openDialog()"><span class="material-symbols-outlined">
+edit
+</span> Edit profile</button>
+    </div>
+    <div class="btn-container password">
+      <button (click)="openGenerateCodeDialog()"><span class="material-symbols-outlined">
+key
+</span> Generate Password</button>
+    </div>
+  </div>
+  <div class="general-information pl-4 mt-4 gap-2 flex flex-column align-items-center">
+    <div class="section-title">General information:</div>
+
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="material-symbols-outlined">mail</span> Email:
+      </div>
+      <div class="field-text">
+        {{ userClaims.sub }}
+      </div>
+    </div>
+
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="material-symbols-outlined">work</span>
+        Experience:
+      </div>
+      <div class="field-text">
+        {{ profile.experience }} years
+      </div>
+    </div>
+
+    <div class="field-container description">
+      <div class="field-logo">
+        <span class="material-symbols-outlined">description</span> Description:
+      </div>
+      <div class="field-text">
+        {{ profile.description }}
+      </div>
+    </div>
+  </div>
+</div>
+<p-dialog header="Edit profile" [modal]="true" [(visible)]="dialogVisible" [style]="{ width: '40rem' }">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="add-pet-form">
+    <div class="card flex justify-content-center align-items-center flex-column">
+      <p-toast></p-toast>
+      <div class="image-preview" *ngIf="imageUrl">
+        <img [src]="imageUrl" alt="Vista previa"/>
+      </div>
+      <p-fileUpload
+        mode="basic"
+        name="demo[]"
+        chooseIcon="pi pi-upload"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000"
+        [auto]="true"
+        (onSelect)="onImageSelect($event)"
+        chooseLabel="upload photo">
+      </p-fileUpload>
+    </div>
+    <div class="card flex justify-content-start mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="name" formControlName="name"/>
+        <label for="name"><span class="pi pi-user"></span>Name</label>
+      </p-floatLabel>
+    </div>
+    <div class="card flex justify-content-start mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="experience" formControlName="experience"/>
+        <label for="experience"><span class="pi pi-map-marker"></span> Experience</label>
+      </p-floatLabel>
+    </div>
+    <div class="card flex flex-column justify-content-start w-full">
+      <label for="float-input">Description</label>
+      <textarea
+        id="float-input"
+        rows="7"
+        cols="30"
+        formControlName="description"
+        pInputTextarea
+        style="resize: none;"
+      >
+          </textarea>
+    </div>
+    <div class="flex justify-content-around gap-2 mb-4 mt-3">
+      <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()"/>
+      <p-button label="Save" (onClick)="submitForm()"/>
+    </div>
+  </form>
+</p-dialog>
+<p-dialog header="Password" [modal]="true" [(visible)]="generateCodeDialogVisible" [style]="{ width: '40rem' }">
+  <p>This password allows another veterinarian to join the curent veterinary clinic in the application</p>
+  <div class="flex flex-column align-items-start justify-content-center mt-3">
+    <div><span class="material-symbols-outlined">key</span> Your password is: <br/></div>
+  <strong>{{ passwordGenerated }}</strong>
+  </div>
+  <div class="flex justify-content-around gap-2 mb-4 mt-3">
+    <p-button label="Close" severity="secondary" (onClick)="closeGenerateCodeDialog()"/>
+  </div>
+</p-dialog>

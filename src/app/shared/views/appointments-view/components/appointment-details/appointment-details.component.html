@@ -1,0 +1,54 @@
+<div>
+  <div class="subtitle">Schedule Appointment</div>
+  <div class="gap-4">
+    <span class="pi pi-calendar"></span>
+    {{appointment.date_day}}
+  </div>
+  <div class="gap-4">
+    <span class="pi pi-clock"></span>
+    {{appointment.start_time}} - {{appointment.end_time}}
+  </div>
+  <hr/>
+
+  <div class="mt-2 subtitle">Patient information</div>
+
+  <div (click)="navigateToPetProfile()" class="pet card-clickable  flex flex-row mb-3 align-items-center justify-content-around">
+    <div class = "img-container flex align-content-center">
+        <img [src]="pet.image_url" [alt]="pet.name">
+    </div>
+    <div class="flex flex-column">
+        <div class="title">Pet: {{pet.name}}</div>
+        <div class="flex flex-row">
+            <div>Species: {{pet.species}}</div>
+            <div class="state">{{pet.breed}}</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="card flex flex-column justify-content-start w-full">
+    <label for="float-input"><span class="pi pi-exclamation-circle"></span> Problem</label>
+    <textarea
+      [readOnly]="true"
+      id="float-input"
+      rows="5"
+      cols="25"
+      pInputTextarea
+      [value]="appointment.description"
+      class="custom-textarea"
+    >
+    </textarea>
+  </div>
+
+  <div class="mt-2 subtitle">Veterinary information</div>
+  <div (click)="navigateToVetProfile()" class="vet card-clickable  flex flex-row mb-3 align-items-center justify-content-around">
+    <div class = "img-container flex align-content-center">
+      <img [src]="vet.image_url" [alt]="pet.name">
+    </div>
+    <div class="flex flex-column">
+      <div class="title">Dr. {{vet.name}}</div>
+      <div class="flex flex-row">
+        <small>Specially: Veterinary</small>
+      </div>
+    </div>
+  </div>
+</div>

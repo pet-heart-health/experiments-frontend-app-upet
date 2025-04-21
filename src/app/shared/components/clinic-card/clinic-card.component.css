@@ -1,0 +1,61 @@
+.card-vet {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  transition: transform 0.2s;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width:400px;
+  justify-self: center;
+  align-self:center;
+}
+.truncate {
+  white-space: nowrap;         /* Evita que el texto pase a la siguiente línea */
+  overflow: hidden;            /* Oculta el desbordamiento del texto */
+  text-overflow: ellipsis;     /* Muestra "..." al final si el texto es demasiado largo */
+}
+.card-pet-img-container{
+  width: 150px;
+  height: 100px;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+}
+
+.card-pet:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+.card-pet img {
+  width: 100%; /* Mantiene la proporción de la imagen */
+  border-bottom: 2px solid #f0f0f0;
+  object-fit: contain;
+}
+
+.card-pet-content {
+  text-align: center;
+}
+
+.card-pet-title {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card-pet-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.secondary-button{
+  background-color: #6B6BF9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.secondary-button:hover{
+  background-color: #9797E4;
+}

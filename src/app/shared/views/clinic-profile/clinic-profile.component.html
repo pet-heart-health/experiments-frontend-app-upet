@@ -1,0 +1,55 @@
+<div class="w-full flex flex-column">
+  <div class="header-clinic-profile flex w-full flex-row align-items-center gap-3">
+      <div class="img-container w-20rem h-12rem pl-4">
+        <img [src]="clinic.image_url" [alt]="clinic.name">
+      </div>
+      <div class="header-title">
+          {{clinic.name}}
+      </div>
+  </div>
+  <div class="body-clinic-profile pl-4 mt-4">
+    <div class="section-title">General information:</div>
+    <div class="field-container">
+        <div class="field-logo">
+          <span class="pi pi-phone"></span>
+        </div>
+        <div class="field-text">
+            {{clinic.phone_number}}
+        </div>
+      </div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-envelope"></span>
+      </div>
+      <div class="field-text">
+        {{clinic.name + "@gmail.com"}}
+      </div>
+    </div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-clock"></span>
+      </div>
+      <div class="field-text">
+        {{clinic.office_hours_start}} - {{clinic.office_hours_end}}
+      </div>
+    </div>
+    <div class="field-container">
+      <div class="field-logo">
+        <span class="pi pi-map-marker"></span>
+      </div>
+      <div class="field-text">
+        {{clinic.location}}
+      </div>
+    </div>
+  </div>
+  <div class="footer-clinic-profile mt-3 pl-4">
+      <div class="section-title">About us:</div>
+    <div> {{clinic.description}}</div>
+  </div>
+  <div class="specialist-clinic-profile mt-3 pl-4">
+    <div class="section-title">Our specialists:</div>
+    <div class="specialist-container mb-5">
+      <app-vet-card *ngFor="let vet of vets" [vet]="vet"></app-vet-card>
+  </div>
+</div>
+</div>

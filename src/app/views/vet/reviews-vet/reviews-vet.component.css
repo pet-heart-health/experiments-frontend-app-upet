@@ -1,0 +1,7 @@
+.reviews-container{
+  display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}

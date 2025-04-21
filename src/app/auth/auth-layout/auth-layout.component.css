@@ -1,0 +1,83 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.custom-img {
+  max-height: 3000px; /* Ajusta según sea necesario */
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantiene el aspecto */
+}
+
+td {
+  padding-right: 8px;
+}
+
+nav {
+  margin-bottom: 16px; /* Ajusta según sea necesario */
+}
+
+router-outlet {
+  width: 100%;  /* Asegúrate de que ocupe el 100% del contenedor */
+  max-height: calc(100vh - 20%); /* Ajusta el valor según sea necesario para el navbar */
+  overflow-y: auto; /* Permitir desplazamiento vertical si el contenido es mayor */
+  box-sizing: border-box; /* Asegúrate de que padding y border se incluyan en el tamaño total */
+}
+
+.flex-col {
+  flex: 1; /* Permitir que el contenedor tome el espacio disponible */
+}
+
+
+.text {
+color: black;
+font-weight: bold;
+
+&.h1 {
+  font-size: 40px;  /* Tamaño extremadamente grande en pantallas grandes */
+
+  @media (max-width: 1200px) {
+    font-size: 40px;  /* Tamaño más pequeño en pantallas medianas */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;  /* Tamaño más pequeño en pantallas móviles */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;  /* Tamaño aún más pequeño en pantallas muy pequeñas */
+  }
+}
+
+&.h2 {
+  font-size: 36px;
+  opacity: 0.5;  /* Opacidad al 50% */
+
+  @media (max-width: 1200px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+&.label{
+  font-size: 32px;
+}
+
+&.input{
+  font-size: 32px;
+}
+
+}
+

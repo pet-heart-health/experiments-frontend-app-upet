@@ -1,0 +1,31 @@
+<div class="list-historial-dates-container">
+  <div class="list-historial-dates-header">
+    <h1>Historial Dates</h1>
+  </div>
+  <div class="list-historial-dates-table">
+    <p-table [value]="petDates" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>VETERINARY</th>
+          <th>PHOTO VET</th>
+          <th>PET</th>
+          <th>PHOTO</th>
+          <th>DATE</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-petDate>
+        <tr>
+          <td><b>{{ petDate.veterinary }}</b></td>
+          <td>
+            <img [src]="petDate.vetPhoto" class="date-photo" width="50px" alt="vet photo">
+          </td>
+          <td>{{ petDate.petName }}</td>
+          <td>
+            <img [src]="petDate.petPhoto" class="date-photo" width="50px" alt="pet photo">
+          </td>
+          <td>{{petDate.date}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.home-owner-view{
+  background-color: whitesmoke;
+}
+
+.home-owner-container {
+  display: flex;
+}
+
+.home-owner-content {
+  flex-grow: 1;
+  padding: 0-20px;
+}
+.title-section{
+  text-align:start;
+}
+

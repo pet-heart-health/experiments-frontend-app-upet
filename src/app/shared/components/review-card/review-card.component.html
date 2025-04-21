@@ -1,0 +1,22 @@
+<div class="review">
+  <div class="header flex flex-row justify-content-between">
+    <div class="flex flex-row gap-1 align-items-center">
+      <div class="img-container w-5rem h-5rem">
+        <img [src]="review.image_url" alt="avatar" />
+      </div>
+      <div>
+        {{review.pet_owner_name}}
+      </div>
+    </div>
+    <div class="flex-row flex">
+      <div>{{review.stars}}</div>
+      <div><span class="pi pi-star-fill"></span></div>
+    </div>
+  </div>
+  <div class="w-full flex-column">
+      <div class="description">
+        {{review.description}}
+      </div>
+    <div class="w-full flex flex-column align-items-end"><small>{{review.review_time}}</small></div>
+  </div>
+</div>

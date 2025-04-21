@@ -1,0 +1,68 @@
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="add-pet-form">
+      <div class="card flex justify-content-center align-items-center flex-column">
+        <p-toast></p-toast>
+        <div class="image-preview" *ngIf="imageUrl">
+          <img [src]="imageUrl" alt="Vista previa" />
+        </div>
+        <p-fileUpload
+          mode="basic"
+          name="demo[]"
+          chooseIcon="pi pi-upload"
+          url="https://www.primefaces.org/cdn/api/upload.php"
+          accept="image/*"
+          maxFileSize="1000000"
+          [auto]="true"
+          (onSelect)="onImageSelect($event)"
+          chooseLabel="upload photo">
+        </p-fileUpload>
+      </div>
+      <div class="card flex justify-content-center mt-5 mb-4">
+        <p-floatLabel>
+          <input pInputText id="name" formControlName="name" />
+          <label for="name">Name</label>
+        </p-floatLabel>
+      </div>
+      <div class="card flex justify-content-center mb-4">
+        <p-floatLabel>
+          <input pInputText id="breed" formControlName="breed" />
+          <label for="name">Breed</label>
+        </p-floatLabel>
+      </div>
+      <div class="card flex justify-content-center mb-4">
+        <p-floatLabel>
+          <input pInputText id="species" formControlName="species" />
+          <label for="name">Species</label>
+        </p-floatLabel>
+      </div>
+      <div class="card flex justify-content-center mb-4">
+        <p-floatLabel>
+          <input type="number" pInputText id="weight" formControlName="weight" />
+          <label for="name">Weight</label>
+        </p-floatLabel>
+      </div>
+      <div class="card flex justify-content-center mb-4">
+        <p-dropdown
+          [options]="genders"
+          formControlName="gender"
+          optionLabel="name"
+          placeholder = "Gender"
+          [style]="{'width':'15rem'}"/>
+      </div>
+      <div class="card flex justify-content-center mb-4">
+        <p-floatLabel>
+        <p-calendar
+          formControlName="birthdate"
+          [showIcon]="true"
+          id="birth_date"
+          [touchUI]="true"
+        />
+        </p-floatLabel>
+      </div>
+      <div class="flex justify-content-around gap-2 mb-4">
+        <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()" />
+        <p-button [label]="buttonTitle" (onClick)="submitForm()"/>
+      </div>
+    </form>
+
+
+

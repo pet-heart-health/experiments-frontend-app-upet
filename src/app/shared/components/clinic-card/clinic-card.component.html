@@ -1,0 +1,29 @@
+<div class="card-vet flex flex-column
+ sm:flex-row md:flex-row lg:flex-row xl:flex-row
+ justify-content-between align-content-between px-4">
+  <div class="card-pet-content align-items-center">
+    <h2 class="card-pet-title truncate">{{clinic.name}}</h2>
+    <div class="card-pet-img-container flex align-content-center">
+      <img [src]="clinic.image_url" alt="Golden retriever">
+    </div>
+  </div>
+  <div class="flex flex-column align-content-between">
+    <!--    <div class="flex flex-row justify-content-around w-full">
+          <div>
+            <i class="pi pi-star-fill"></i>{{clinic.location}}
+          </div>
+        </div>-->
+    <div class="flex flex-column justify-content-center align-items-center">
+      <p class="phone">{{clinic.phone_number}}</p>
+      <p class="attention">{{clinic.office_hours_start}} -  {{clinic.office_hours_end}}</p>
+    </div>
+    <div class="flex flex-row align-content-around mt-3 ">
+      <button class="secondary-button mr-4" (click)="toClinicProfile()">
+        view
+      </button>
+      <button class="secondary-button">
+        date
+      </button>
+    </div>
+  </div>
+</div>

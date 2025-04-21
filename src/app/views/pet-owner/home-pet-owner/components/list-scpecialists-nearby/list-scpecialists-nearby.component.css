@@ -1,0 +1,50 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.my-vets-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 95%; /* Ajusta el ancho máximo según sea necesario */
+  overflow-x: auto;
+  margin: 0 auto; /* Centra el contenedor */
+  background: #fff; /* Fondo blanco para la cinta */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px; /* Espacio entre el título y las tarjetas */
+}
+
+.vets-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  align-items:center;
+  justify-items: center;
+}
+@media (max-width: 500px) {
+  .vets-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+.btn-primary{
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color:#808080;
+}
+.btn-primary:hover{
+  background-color: #0A1B3E;
+  color: white;
+}

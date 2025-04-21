@@ -1,0 +1,51 @@
+<form [formGroup]="myForm">
+  <div class="card flex flex-column justify-content-center mb-4">
+    <label>Select date </label>
+    <div class="card flex justify-content-center">
+      <p-calendar
+        class="max-w-full"
+        formControlName="date_day"
+        [inline]="true"
+        (onSelect)="loadTimesAvailable()"
+        [showWeek]="true"/>
+    </div>
+  </div>
+  <div class="card flex flex-column justify-content-center w-full">
+    <label>Select time</label>
+    <p-dropdown
+      [options]="availableTimes"
+      formControlName="start_time"
+      [checkmark]="true"
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="select an available time"/>
+  </div>
+  <div class="card flex flex-column justify-content-start">
+    <label>Select your pet</label>
+    <p-dropdown
+      [options]="pets"
+      formControlName="pet"
+      [checkmark]="true"
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="Select your pet"/>
+  </div>
+  <div class="card flex flex-column justify-content-start w-full">
+    <label for="float-input">Pet´s problem</label>
+    <textarea
+      id="float-input"
+      rows="7"
+      cols="30"
+      formControlName="description"
+      pInputTextarea
+      style="resize: none;"
+    >
+    </textarea>
+
+  </div>
+
+  <div class="flex justify-content-around gap-2 mb-4 mt-3">
+    <p-button label="Cancel" severity="secondary" (onClick)="onClose()"/>
+    <p-button label="Save" (onClick)="submitAppointment()"/>
+  </div>
+</form>

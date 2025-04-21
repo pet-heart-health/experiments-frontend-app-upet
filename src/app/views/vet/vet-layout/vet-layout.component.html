@@ -1,0 +1,7 @@
+<app-nav-bar></app-nav-bar>
+<div class="flex mt-16">
+  <app-sidebar [options]="options" (sidebarToggle)="onSidebarToggle($event)" ></app-sidebar>
+  <div [ngClass]="{'vet-layout-full-screen': true}" class="">
+    <router-outlet class="view h-full"></router-outlet>
+  </div>
+</div>

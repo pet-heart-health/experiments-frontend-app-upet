@@ -1,0 +1,19 @@
+<div class="my-pets-container">
+  <div class="header">
+    <div class="title">My pets</div>
+    <div class="add-pet">
+      <button class="btn-primary" (click)="redirectToAllPets()" >+ View all</button>
+  </div>
+    </div>
+  <div class="my-pets-container-content flex-column justify-content-center sm:flex-row sm:justify-content-between md:flex-row md:justify-content-between">
+    <div class="pets-wrapper">
+      <app-pet-card *ngFor="let pet of pets" [pet]="pet"></app-pet-card>
+    </div>
+    <div class="btn-square-container">
+      <button class="btn-square" (click)="openDialogAddPet()">+Add pet</button>
+    </div>
+  </div>
+</div>
+<p-dialog header="Add pet" [modal]="true" [(visible)]="visibleAddPet" [style]="{ width: '40rem' }">
+    <app-form-add-pet [closeDialog]="closeDialogAddPet" [mode]="TypeForm.ADD"></app-form-add-pet>
+</p-dialog>

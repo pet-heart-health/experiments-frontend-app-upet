@@ -1,0 +1,67 @@
+<div class="w-full flex flex-row">
+  <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
+    <div class="flex flex-column gap-2">
+      <label for="name">Name</label>
+      <input
+        formControlName="name"
+        class="input"
+        pInputText
+        id="name"
+        aria-describedby="username-help"/>
+    </div>
+    <div class="flex flex-column gap-2">
+      <label for="type">Type</label>
+      <input
+        formControlName="vaccineType"
+        class="input"
+        pInputText
+        id="type"
+        aria-describedby="username-help"/>
+    </div>
+    <div class="flex flex-column gap-2">
+      <label for="dose">Dose</label>
+      <input
+        formControlName="dose"
+        class="input"
+        pInputText
+        id="dose"
+        aria-describedby="username-help"/>
+    </div>
+    <div class="flex flex-column gap-2">
+      <label for="dose">Location</label>
+      <input
+        formControlName="location"
+        class="input"
+        pInputText
+        id="location"
+        aria-describedby="username-help"/>
+    </div>
+    <div class="card flex flex-column gap-2 justify-content-center">
+      <label for="date" class=""> Result date </label>
+      <p-calendar
+        formControlName="vaccineDate"
+        class="input"
+        id="date"
+        [iconDisplay]="'input'"
+        [showIcon]="true"
+        inputId="icondisplay" />
+    </div>
+    <div class="card flex justify-content-center mt-4">
+      <p-button label="Add Vaccine" class="button-secondary" type="submit"/>
+    </div>
+  </form>
+  <p-divider layout="vertical" />
+  <div class="w-full flex-column results-container">
+    <p *ngIf="vaccines.length==0">
+      No vaccines registered
+    </p>
+    <div *ngFor="let result of vaccines" class="medical-result mb-4">
+      <div>Name: {{result.name}}</div>
+      <div>Type: {{result.vaccineType}}</div>
+      <div>Dose: {{result.dose}}</div>
+      <div>Location: {{result.location}}</div>
+      <div>Date: {{result.vaccineDate}}</div>
+      <hr/>
+    </div>
+  </div>
+</div>

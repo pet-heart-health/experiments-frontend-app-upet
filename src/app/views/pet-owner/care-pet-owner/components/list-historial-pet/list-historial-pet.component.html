@@ -1,0 +1,32 @@
+<div class="list-historial-pet-container">
+  <div class="list-historial-pet-header">
+    <h1>Historial Pet</h1>
+    <p-button class="info-button" label="+ Add Info"></p-button>
+  </div>
+  <div class="list-historial-table">
+    <p-table [value]="petHistories" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>PET</th>
+          <th>PHOTO</th>
+          <th>TYPE</th>
+          <th>DATE</th>
+          <th>INFO</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-petHistory>
+        <tr>
+          <td><b>{{ petHistory.petName }}</b></td>
+          <td>
+            <img [src]="petHistory.petPhoto" class="pet-history-photo" width="50px" alt="pet photo">
+          </td>
+          <td>{{ petHistory.type }}</td>
+          <td>{{ petHistory.date }}</td>
+          <td><p-button class="view-pet-detail-button" label="View"></p-button></td>
+          <td><b>⋮</b></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

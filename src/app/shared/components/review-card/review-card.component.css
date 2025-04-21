@@ -1,0 +1,22 @@
+.img-container{
+    width: 50px;
+    border: 2px solid black;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.review{box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  padding: 20px;
+  width:25rem;
+  height:15rem;
+  border-radius:10px;
+  align-self:center;
+  justify-self:center;
+}
+
+.description{
+  margin-top: 10px;
+  height: 6rem;
+  overflow-y: auto;
+}

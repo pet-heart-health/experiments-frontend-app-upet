@@ -1,0 +1,43 @@
+.banner {
+  display: flex; /* Flexbox para alinear texto e imagen */
+  align-items: center; /* Centrar verticalmente */
+  border: 2px solid #4CAF50; /* Color del borde */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 0px auto; /* Aumentar margen en los lados */
+  color:white;
+  background-color: #0A1B3E;
+  width:95%;
+}
+.title{
+  font-size: 30px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+}
+.content{
+  font-size: .9rem; /* Tamaño de fuente */
+  margin-left: 20px; /* Espaciado entre texto e imagen */
+}
+.tip{
+  font-size: .9rem; /* Tamaño de fuente */
+  margin-left: 20px; /* Espaciado entre texto e imagen */
+}
+.banner-image {
+  width: 100px; /* Ajusta el tamaño según tu imagen */
+  height: auto; /* Mantiene la proporción */
+  margin-left: 20px; /* Espaciado entre texto e imagen */
+}
+.appointments{
+  width: 95%;
+  margin: 0px auto;
+}
+.appointment-grid{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.subtitle{
+  font-size: 20px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+}

@@ -1,0 +1,50 @@
+<div class="w-full">
+    <div class="header-container w-full flex  align-items-center gap-4">
+      <div class="header-title w-full flex flex-row align-items-center gap-4">
+        <div class="img-container w-20rem h-12rem">
+          <img [src]="vet.image_url" [alt]="vet.name" />
+        </div>
+        <div>
+          <div>Dr. {{vet.name}}</div>
+          <div><small>Veterinary behavioral</small></div>
+        </div>
+      </div>
+      <div class="card flex justify-content-center align-items-center mr-4">
+        <p-button (click)="openAppointmentDialog()" label="Book Appointment" class="p-button-raised p-button-rounded btn-book p-0"></p-button>
+      </div>
+    </div>
+
+    <div class="general-information mt-4 ml-4">
+      <div class="section-title">General information:</div>
+        <div class="block-information">
+          <div class="title">Clinic Veterinary</div>
+          <div class="body">{{clinic.name}}</div>
+        </div>
+      <div class="block-information">
+        <div class="title">About</div>
+        <div class="body">{{vet.description==null?"No hay descripción": vet.description}}</div>
+      </div>
+      <div class="block-information">
+        <div class="title">Experience</div>
+        <div class="body">{{vet.experience==null?0:vet.experience}} years</div>
+      </div>
+    </div>
+
+    <div class="reviews mt-4 ml-4">
+      <div class="review-header flex flex-row justify-content-between">
+        <div class="section-title">Reviews:</div>
+        <div class="card flex-column justify-content-center mr-4">
+            <p-button label="+ Add Review" (click)="openReviewDialog()"></p-button>
+        </div>
+      </div>
+      <app-vet-list-review></app-vet-list-review>
+    </div>
+</div>
+
+<p-dialog header="Add appointment" [modal]="true" [(visible)]="visibleAppointmentDialog" [style]="{ width: '40rem' }">
+    <app-appointment-form-dialog [vetId]="vet.id" [onClose]="closeAppointmentDialog"></app-appointment-form-dialog>
+</p-dialog>
+
+<p-dialog header="Add review" [modal]="true" [(visible)]="visibleReviewDialog" [style]="{ width: '30rem' }">
+    <app-review-form-dialog [vetId]="vet.id" [closeDialog]="closeReviewDialog"></app-review-form-dialog>
+</p-dialog>

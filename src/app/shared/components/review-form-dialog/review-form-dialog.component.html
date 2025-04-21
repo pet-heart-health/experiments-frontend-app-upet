@@ -1,0 +1,29 @@
+  <form [formGroup]="myForm" (submit)="submitReview()" class="flex w-full flex-column align-items-center justify-content-center">
+    <div class="card flex flex-column justify-content-center">
+      <label for="float-input">Description</label>
+      <textarea
+          id="float-input"
+          rows="5"
+          cols="30"
+          formControlName="description"
+          pInputTextarea>
+        </textarea>
+    </div>
+    <div>
+      <div>
+        Stars <span class="pi pi-star-fill"></span>
+      </div>
+      <div class="card flex justify-content-center">
+        <p-slider formControlName="stars" [step]="1" styleClass="w-14rem" [max]="5" [min]="1"/>
+      </div>
+    </div>
+
+    <div class="flex justify-content-around gap-2 mb-4 mt-5 w-full">
+      <div class="card flex align-items-center justify-content-between">
+        <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()"/>
+      </div>
+      <div class="card flex justify-content-center submit-btn">
+        <p-button label="Save" type="submit"/>
+      </div>
+    </div>
+  </form>

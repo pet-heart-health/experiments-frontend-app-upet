@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "devpaw-upet",
+    "public": "dist/upet-frontend-web/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+<div class="h-full w-full absolute"> <!-- Altura máxima responsiva -->
+    <div class="flex flex-col w-full h-full px-4 align-middle items-center">    
+      <div class="card flex justify-center max-w-lg mx-4 overflow-auto" style="max-height: 600px;">
+        <div>
+          <h1 class="text-4xl font-bold pb-2">Before Start</h1>
+          <h2 class="text-xl font-medium mb-4">
+            You are one step away from becoming <br />
+            a member of Upet
+          </h2>
+  
+          <div class="mt-4">
+            <!-- Botones para alternar formularios -->
+            <div class="flex justify-around mb-2">
+              <button (click)="showVetForm()" 
+                [ngClass]="{'bg-purple-500 text-white': isVetRegister, 'bg-gray-200 text-black': !isVetRegister}" 
+                class="flex-1 py-2 mx-1 rounded-lg transition duration-300">
+                Register Veterinarian
+              </button>
+              <button (click)="showClinicForm()" 
+                [ngClass]="{'bg-purple-500 text-white': !isVetRegister, 'bg-gray-200 text-black': isVetRegister}" 
+                class="flex-1 py-2 mx-1 rounded-lg transition duration-300">
+                Register Clinic
+              </button>
+            </div>
+  
+            <!-- Condicional para mostrar el formulario adecuado -->
+            <div *ngIf="isVetRegister; else clinicForm">
+              <h3 class="text-2xl font-bold mb-2">Register Veterinarian</h3>
+  
+              <!-- Clinic Name -->
+              <div class="flex flex-col mb-4">
+                <label for="clinicName" class="text-lg mb-1">Clinic Name</label>
+                <input type="text" id="clinicName" [(ngModel)]="clinicName" placeholder="Enter clinic name"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <!-- OTP Password -->
+              <div class="flex flex-col mb-4">
+                <label for="otp_password" class="text-lg mb-1">OTP Password</label>
+                <input type="password" id="otp_password" [(ngModel)]="otp_password" placeholder="Enter OTP password"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <div class="py-4 flex justify-center">
+                <button (click)="registerVet()"
+                  class="text-white bg-purple-500 hover:bg-purple-600 border-0 rounded-full px-8 py-3 shadow-lg">
+                  Register
+                </button>
+              </div>
+  
+              <div class="text-center">
+                <p (click)="toggleForm()" class="cursor-pointer text-blue-500 text-sm">Register Clinic Instead</p>
+              </div>
+            </div>
+  
+            <ng-template #clinicForm>
+              <h3 class="text-2xl font-bold mb-2">Register Clinic</h3>
+  
+              <!-- Clinic Name -->
+              <div class="flex flex-col mb-4">
+                <label for="name" class="text-lg mb-1">Name</label>
+                <input type="text" id="name" [(ngModel)]="name" placeholder="Enter clinic name"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <!-- Location -->
+              <div class="flex flex-col mb-4">
+                <label for="location" class="text-lg mb-1">Location</label>
+                <input type="text" id="location" [(ngModel)]="location" placeholder="Enter location"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <!-- Phone Number -->
+              <div class="flex flex-col mb-4">
+                <label for="phone_number" class="text-lg mb-1">Phone Number</label>
+                <input type="text" id="phone_number" [(ngModel)]="phone_number" placeholder="Enter phone number"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <!-- Description -->
+              <div class="flex flex-col mb-4">
+                <label for="description" class="text-lg mb-1">Description</label>
+                <textarea id="description" [(ngModel)]="description" placeholder="Enter clinic description"
+                  class="text-lg w-full h-20 px-3 border border-black rounded-md"></textarea>
+              </div>
+  
+              <!-- Office Hours Start -->
+              <div class="flex flex-col mb-4">
+                <label for="office_hours_start" class="text-lg mb-1">Office Hours Start</label>
+                <input type="time" id="office_hours_start" [(ngModel)]="office_hours_start"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <!-- Office Hours End -->
+              <div class="flex flex-col mb-4">
+                <label for="office_hours_end" class="text-lg mb-1">Office Hours End</label>
+                <input type="time" id="office_hours_end" [(ngModel)]="office_hours_end"
+                  class="text-lg w-full h-10 px-3 border border-black rounded-md" />
+              </div>
+  
+              <div class="py-4 flex justify-center">
+                <button (click)="registerClinic()"
+                  class="text-white bg-purple-500 hover:bg-purple-600 border-0 rounded-full px-8 py-3 shadow-lg">
+                  Register
+                </button>
+              </div>
+  
+              <div class="text-center">
+                <p (click)="toggleForm()" class="cursor-pointer text-blue-500 text-sm">Register Veterinarian Instead</p>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

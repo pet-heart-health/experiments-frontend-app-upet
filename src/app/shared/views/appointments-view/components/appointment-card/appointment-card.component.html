@@ -1,0 +1,28 @@
+<div class="flex flex-row card-container gap-3 align-items-center pl-2 pr-3">
+  <div class="card-img-container flex align-content-center">
+    <img [src]="vet.image_url" alt="vet image">
+  </div>
+  <div class="flex flex-column">
+    <div class="title">
+      Dr. {{vet.name}}
+    </div>
+    <div class="flex flex-row">
+      <div>Pet: {{pet.name}}</div>
+      <div [class]="isPast?'past ':'upcoming ' + 'state'">{{isPast?'Past':'Upcoming'}}</div>
+    </div>
+    <div>
+      <small>{{customAppointment.date_day}} | {{customAppointment.start_time}}</small>
+    </div>
+    <div class="mt-3 mb-3 card flex flex-column justify-content-center align-items-center">
+      <p-button (click)="openDetails()" label="View details"></p-button>
+    </div>
+  </div>
+</div>
+
+<p-dialog header="Appointment details" [modal]="true" [(visible)]="visibleDetails" [style]="{ width: '40rem' }">
+  <app-appointment-details
+    [appointment]="customAppointment"
+    [vet]="vet"
+    [pet]="pet"
+  ></app-appointment-details>
+</p-dialog>

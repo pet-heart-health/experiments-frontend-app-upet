@@ -1,0 +1,49 @@
+<div class="w-full flex flex-row">
+  <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
+    <div class="flex flex-column gap-2">
+      <label for="resultType">Result type</label>
+      <input
+        formControlName="resultType"
+        class="input"
+        pInputText
+        id="resultType"
+        aria-describedby="username-help"/>
+    </div>
+    <div class="card flex flex-column gap-2 justify-content-center">
+      <label for="description">Description</label>
+      <textarea
+        formControlName="description"
+        class="input"
+        id="description"
+        rows="5"
+        cols="30"
+        pInputTextarea
+        [autoResize]="true">
+    </textarea>
+    </div>
+    <div class="card flex flex-column gap-2 justify-content-center">
+      <label for="date" class=""> Result date </label>
+      <p-calendar
+        formControlName="resultDate"
+        id="date"
+        [iconDisplay]="'input'"
+        [showIcon]="true"
+        inputId="icondisplay" />
+    </div>
+    <div class="card flex justify-content-center mt-4">
+      <p-button label="Add Result" class="button-secondary" type="submit"/>
+    </div>
+  </form>
+  <p-divider layout="vertical" />
+  <div class="w-full flex-column results-container">
+    <p *ngIf="medicalResults.length==0">
+      No medical results yet
+    </p>
+    <div *ngFor="let result of medicalResults" class="medical-result mb-4">
+        <div>Result type: {{result.resultType}}</div>
+        <div>Description: {{result.description}}</div>
+        <div>Result date: {{result.resultDate}}</div>
+      <hr/>
+    </div>
+  </div>
+</div>

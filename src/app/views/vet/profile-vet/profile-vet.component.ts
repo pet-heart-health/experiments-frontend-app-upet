@@ -63,6 +63,7 @@ export class ProfileVetComponent {
       name: "",
       description: "",
       experience: "",
+      image_url: "",
     })
 
   }
@@ -71,7 +72,7 @@ export class ProfileVetComponent {
     const userId = this.userClaims?.user_id!;
     this.vetService.getVeterinarianById(userId).subscribe((res:VeterinarianSchemaResponse) => {
       this.profile = res;
-      this.imageUrl = this.profile.image_url;
+      this.imageUrl = this.profile?.image_url;
       this.myForm.patchValue({
         name: res.name,
         description: res.description,
@@ -103,11 +104,13 @@ export class ProfileVetComponent {
     const body:VeterinarianUpdateInformation = {
       name: this.myForm.value.name,
       description: this.myForm.value.description,
-      experience: this.myForm.value.experience
+      experience: this.myForm.value.experience,
+      image_url: this.imageUrl as string
     }
+    console.log({body});
     this.vetService.changeVetInformation(this.profile.id, body).subscribe((res:VeterinarianSchemaResponse) => {
       this.profile = res;
-      this.imageUrl = this.profile.image_url;
+      this.imageUrl = res.image_url;
       this.myForm.patchValue({
         name: res.name,
         description: res.description,

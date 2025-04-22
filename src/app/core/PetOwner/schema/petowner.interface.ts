@@ -5,14 +5,15 @@ export interface PetOwnerSchemaPost {
     numberPhone: string;
     location: string;
   }
-  
+
   // Interface para actualizar información del dueño de mascota
   export interface PetOwnerUpdateInformation {
     numberPhone: string;
     location: string;
     name: string;
+    image_url: string;
   }
-  
+
   // Interface para obtener información del dueño de mascota
   export interface PetOwnerSchemaGet {
     id: number;
@@ -23,4 +24,3 @@ export interface PetOwnerSchemaPost {
     subscriptionType: SubscriptionType;
   }
 
-  

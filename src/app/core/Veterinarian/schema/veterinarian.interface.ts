@@ -11,6 +11,7 @@ export interface VeterinarianUpdateInformation {
   name: string;
   description?: string;
   experience?: number;
+  image_url: string;
 }
 
 // schemas/VeterinarianSchemaGet.ts

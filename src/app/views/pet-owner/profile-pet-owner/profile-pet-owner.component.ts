@@ -60,6 +60,7 @@ export class ProfilePetOwnerComponent {
       name: "",
       phone_number: "",
       location: "",
+      image_url: "",
     })
 
   }
@@ -68,7 +69,7 @@ export class ProfilePetOwnerComponent {
     const userId = this.userClaims?.user_id!;
     this.petOwnerService.getPetOwnerById(userId).subscribe((res:PetOwnerSchemaGet) => {
       this.profile = res;
-      this.imageUrl = this.profile.image_url;
+      this.imageUrl = this.profile?.image_url;
       this.myForm.patchValue({
         name: res.name,
         phone_number: res.numberPhone,
@@ -113,7 +114,9 @@ export class ProfilePetOwnerComponent {
       name: this.myForm.value.name,
       numberPhone: this.myForm.value.phone_number,
       location: location,
+      image_url: this.imageUrl as string,
     }
+    console.log({body});
     this.petOwnerService.updatePetOwner(this.userClaims.user_id, body).subscribe((res) => {
       this.profile = res;
       this.profile.location = this.myForm.value.location;

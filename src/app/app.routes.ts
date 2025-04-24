@@ -7,5 +7,5 @@ export const routes: Routes = [
   ...AUTH_ROUTES,
   ...PET_OWNER_ROUTES,
   ...VET_ROUTES,
-  {path: '**', redirectTo: 'pet-owner/home'}
+  {path: '**', redirectTo: 'auth/login'}
 ];

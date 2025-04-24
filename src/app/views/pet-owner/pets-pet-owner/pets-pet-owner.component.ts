@@ -10,6 +10,7 @@ import { PetSchemaResponse } from '../../../core/Pet/schema/pet.interface';
 import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
 import {AuthService} from "../../../core/auth/services/auth.service";
 import {SearchBarComponent} from "../../../shared/components/search-bar/search-bar.component";
+import {PetService} from "../../../core/Pet/services/pet.service";
 
 @Component({
   selector: 'app-pets-pet-owner',
@@ -32,14 +33,14 @@ export class PetsPetOwnerComponent {
   user:DecodedToken|null;
 
   constructor(
-    private homePetOwnerService: HomePetOwnerService,
+    private homePetOwnerService: PetService,
     private authService:AuthService
   ) {
     this.user = authService.decodeToken();
   }
 
   ngOnInit() {
-    this.homePetOwnerService.getMyPets(this.user?.user_id!).subscribe((data) => {
+    this.homePetOwnerService.getPetsByOwner(this.user?.user_id!).subscribe((data) => {
       this.pets = data;
       this.petsAux = data;
     });

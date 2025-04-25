@@ -3,6 +3,9 @@ import {ReviewCardComponent} from "../../../shared/components/review-card/review
 import {ReviewService} from "../../../core/review/services/review.service";
 import {ReviewSchemaGet} from "../../../core/review/schema/review.interface";
 import {NgForOf, NgIf} from "@angular/common";
+import { AuthService } from '../../../core/auth/services/auth.service';
+import { VeterinarianService } from '../../../core/Veterinarian/services/veterinarian.service';
+import { VeterinarianSchemaResponse } from '../../../core/Veterinarian/schema/veterinarian.interface';
 
 @Component({
   selector: 'app-reviews-vet',
@@ -19,12 +22,21 @@ export class ReviewsVetComponent {
 
   reviews:ReviewSchemaGet[] = [];
 
-  constructor(private reviewsService:ReviewService) {
+  constructor(
+    private vetService:VeterinarianService,
+    private authService:AuthService,
+    private reviewsService:ReviewService
+  ) {
   }
 
   ngOnInit() {
-    this.reviewsService.getReviews().subscribe((reviews) => {
-      this.reviews = reviews;
+    let userClaims = this.authService.decodeToken()!;
+    const userId = userClaims?.user_id!;
+    this.vetService.getVeterinarianById(userId).subscribe((res:VeterinarianSchemaResponse) => {
+      this.reviewsService.getReviewsByVetId(res.id).subscribe((reviews) => {
+        this.reviews = reviews;
+      });
     });
+    
   }
 }

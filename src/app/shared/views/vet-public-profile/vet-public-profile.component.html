@@ -37,7 +37,7 @@
             <p-button label="+ Add Review" (click)="openReviewDialog()"></p-button>
         </div>
       </div>
-      <app-vet-list-review></app-vet-list-review>
+      <app-vet-list-review [reviews]="this.reviews"></app-vet-list-review>
     </div>
 </div>
 
@@ -46,5 +46,5 @@
 </p-dialog>
 
 <p-dialog header="Add review" [modal]="true" [(visible)]="visibleReviewDialog" [style]="{ width: '30rem' }">
-    <app-review-form-dialog [vetId]="vet.id" [closeDialog]="closeReviewDialog"></app-review-form-dialog>
+    <app-review-form-dialog (reviewCreated)="this.loadReviews()" [vetId]="vet.id" [closeDialog]="closeReviewDialog"></app-review-form-dialog>
 </p-dialog>

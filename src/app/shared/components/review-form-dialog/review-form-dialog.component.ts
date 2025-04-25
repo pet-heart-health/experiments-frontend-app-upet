@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Button} from "primeng/button";
 import {DialogModule} from "primeng/dialog";
 import {FloatLabelModule} from "primeng/floatlabel";
@@ -30,6 +30,8 @@ import {AuthService} from "../../../core/auth/services/auth.service";
 export class ReviewFormDialogComponent {
   @Input() closeDialog!: () => void;
   @Input() vetId!: number;
+  @Output() reviewCreated = new EventEmitter<void>;
+
   myForm:FormGroup = new FormGroup({});
   user:DecodedToken|null;
 
@@ -58,6 +60,7 @@ export class ReviewFormDialogComponent {
     const petOwnerId = this.user?.user_id!;
     this.reviewService.createReview(petOwnerId, request).subscribe(() => {
       alert('Review created');
+      this.reviewCreated.emit();
       this.closeDialog();
     });
   }

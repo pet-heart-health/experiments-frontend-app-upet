@@ -29,5 +29,11 @@ export class ReviewService extends UpetApiService {
     );
   }
 
+  // Obtener por vet_id
+  getReviewsByVetId(vetId:number): Observable<ReviewSchemaGet[]> {
+    return this.http.get<ReviewSchemaGet[]>(`${this.apiUrl}/${vetId}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
 }

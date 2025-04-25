@@ -60,7 +60,7 @@ export class VeterinarianService extends UpetApiService {
 
   // Obtener horarios disponibles de un veterinario
   getAvailableTimes(vetId: number, availabilityData: { date:string }): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/{vet_id}/available_times?clinic_id=${vetId}`, availabilityData).pipe(
+    return this.http.post<any>(`${this.apiUrl}/${vetId}/available_times?vet_id=${vetId}`, availabilityData).pipe(
       catchError(this.handleError)
     );
   }

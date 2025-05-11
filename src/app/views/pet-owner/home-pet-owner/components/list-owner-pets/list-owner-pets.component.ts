@@ -53,6 +53,7 @@ export class ListOwnerPetsComponent {
 
   closeDialogAddPet = () => {
     this.visibleAddPet = false;
+    this.router.navigate(['/pet-owner/home']).then(r => r);
   }
 
   redirectToAllPets() {

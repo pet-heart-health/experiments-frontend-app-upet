@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UpetApiService } from '../../Api/UpetBackend/upet-api.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { AppointmentSchemaGet, AppointmentSchemaCreate } from '../schema/appointment.interface';
+import {AppointmentSchemaGet, AppointmentSchemaCreate, AppointmentSchemaUpdate} from '../schema/appointment.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,13 @@ export class AppointmentService extends UpetApiService {
   // Crear una cita
   createAppointment(appointment: AppointmentSchemaCreate): Observable<AppointmentSchemaGet> {
     return this.http.post<AppointmentSchemaGet>(this.apiUrl, appointment).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Crear una cita
+  updateAppointment(appointmentId: number, appointment: AppointmentSchemaUpdate): Observable<AppointmentSchemaGet> {
+    return this.http.put<AppointmentSchemaGet>(`${this.apiUrl}/${appointmentId}`,appointment).pipe(
       catchError(this.handleError)
     );
   }

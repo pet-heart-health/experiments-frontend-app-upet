@@ -19,21 +19,21 @@
     <div class="flex flex-column">
         <div class="title">Pet: {{pet.name}}</div>
         <div class="flex flex-row">
-            <div>Species: {{pet.species}}</div>
+            <div>Species: {{pet.species}} </div>
             <div class="state">{{pet.breed}}</div>
         </div>
     </div>
   </div>
 
   <div class="card flex flex-column justify-content-start w-full">
-    <label for="float-input"><span class="pi pi-exclamation-circle"></span> Problem</label>
+    <label for="float-input"><span class="pi pi-exclamation-circle"></span>{{appointment.diagnosis == null?'Problem' : 'Resultado'}}</label>
     <textarea
       [readOnly]="true"
       id="float-input"
       rows="5"
       cols="25"
       pInputTextarea
-      [value]="appointment.description"
+      [value]="appointment.diagnosis == null? appointment.description : appointment.diagnosis + ' ' + appointment.treatment"
       class="custom-textarea"
     >
     </textarea>
@@ -51,4 +51,34 @@
       </div>
     </div>
   </div>
+
+  <div class="buttonc mt-3 mb-3 card flex flex-column justify-content-center align-items-center">
+    <p-button (click)="openDialog()" label="Complete"></p-button>
+  </div>
+  <div class="buttonc2 mt-3 mb-3 card flex flex-column justify-content-center align-items-center">
+    <p-button (click)="cancel()" label="Cancel"></p-button>
+  </div>
 </div>
+<p-dialog header="Edit profile" [modal]="true" [(visible)]="dialogVisible" [style]="{ width: '40rem' }">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="add-pet-form">
+    <div class="card flex justify-content-center align-items-center flex-column">
+      <p-toast></p-toast>
+    </div>
+    <div class="card flex justify-content-start mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="diagnosis" formControlName="diagnosis"/>
+        <label for="diagnosis"><span class="pi pi-user"></span>Diagnosis</label>
+      </p-floatLabel>
+    </div>
+    <div class="card flex justify-content-start mt-5 mb-4">
+      <p-floatLabel>
+        <input pInputText id="treatment" formControlName="treatment"/>
+        <label for="treatment"><span class="pi pi-map-marker"></span> Treatment</label>
+      </p-floatLabel>
+    </div>
+    <div class="flex justify-content-around gap-2 mb-4 mt-3">
+      <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()"/>
+      <p-button label="Save" (onClick)="submitForm()"/>
+    </div>
+  </form>
+</p-dialog>

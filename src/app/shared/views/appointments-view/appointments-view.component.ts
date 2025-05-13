@@ -26,6 +26,7 @@ export class AppointmentsViewComponent {
 
   upcomingAppointments: AppointmentSchemaGet[] = [];
   pastAppointments: AppointmentSchemaGet[] = [];
+  cancelledAppointments: AppointmentSchemaGet[] = [];
 
   constructor(
     private appointmentsService:AppointmentService,
@@ -34,6 +35,7 @@ export class AppointmentsViewComponent {
     this.views = [
       {label: 'Upcoming', icon: 'pi pi-fw pi-bars'},
       {label: 'Past', icon: 'pi pi-fw pi-clock'},
+      {label: 'Cancelled', icon: 'pi pi-fw pi-times-circle'},
     ];
   }
 
@@ -49,6 +51,9 @@ export class AppointmentsViewComponent {
       this.appointmentsService.getUpcomingAppointmentsByOwnerId(userId).subscribe((appointments) => {
         this.upcomingAppointments = appointments;
       });
+      this.appointmentsService.getCancelledAppointmentsByOwnerId(userId).subscribe((appointments) => {
+        this.upcomingAppointments = appointments;
+      });
     }
     else if(role == UserType.Vet) {
       this.appointmentsService.getPastAppointmentsByVeterinarianId(userId).subscribe((appointments) => {
@@ -56,6 +61,9 @@ export class AppointmentsViewComponent {
       });
       this.appointmentsService.getUpcomingAppointmentsByVeterinarianId(userId).subscribe((appointments) => {
         this.upcomingAppointments = appointments;
+      });
+      this.appointmentsService.getCancelledAppointmentsByVeterinarianId(userId).subscribe((appointments) => {
+        this.cancelledAppointments = appointments;
       });
     }
   }

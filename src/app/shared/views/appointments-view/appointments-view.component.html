@@ -6,9 +6,12 @@
     <p-tabMenu [model]="views" [(activeItem)]="activeView" />
   </div>
   <div *ngIf="activeView.label=='Upcoming'" class="appointments-container">
-    <app-appointment-card *ngFor="let appointment of upcomingAppointments" [appointment]="appointment" [isPast]="false"></app-appointment-card>
+    <app-appointment-card *ngFor="let appointment of upcomingAppointments" [appointment]="appointment" [isView]=1></app-appointment-card>
   </div>
   <div *ngIf="activeView.label=='Past'" class="appointments-container">
-    <app-appointment-card *ngFor="let appointment of pastAppointments" [appointment]="appointment" [isPast]="true"></app-appointment-card>
+    <app-appointment-card *ngFor="let appointment of pastAppointments" [appointment]="appointment" [isView]=2></app-appointment-card>
+  </div>
+  <div *ngIf="activeView.label=='Cancelled'" class="appointments-container">
+    <app-appointment-card *ngFor="let appointment of cancelledAppointments" [appointment]="appointment" [isView]=3></app-appointment-card>
   </div>
 </div>

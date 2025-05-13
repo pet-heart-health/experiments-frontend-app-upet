@@ -31,3 +31,14 @@
   padding: 10px;
   box-shadow: 0 0 5px var(--color-button-secondary);
 }
+
+.buttonc{
+  color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background-color: gold;
+}
+.buttonc2{
+  color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background-color: red;
+}

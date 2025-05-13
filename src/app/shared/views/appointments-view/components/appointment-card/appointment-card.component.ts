@@ -23,7 +23,7 @@ import {Router} from "@angular/router";
 })
 export class AppointmentCardComponent {
   @Input() appointment!: AppointmentSchemaGet;
-  @Input() isPast!: boolean;
+  @Input() isView!: number;
 
   pet:PetSchemaResponse = {} as PetSchemaResponse;
   vet:VeterinarianSchemaResponse = {} as VeterinarianSchemaResponse;

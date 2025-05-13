@@ -8,7 +8,9 @@
     </div>
     <div class="flex flex-row">
       <div>Pet: {{pet.name}}</div>
-      <div [class]="isPast?'past ':'upcoming ' + 'state'">{{isPast?'Past':'Upcoming'}}</div>
+      <div [class]="isView == 1?'upcoming '+ 'state' : ''">{{isView == 1?'Upcoming':''}}</div>
+      <div [class]="isView == 2?'past '+ 'state' : ''">{{isView == 2?'Past':''}}</div>
+      <div [class]="isView == 3?'cancelled '+ 'state' : ''">{{isView == 3?'Cancelled':''}}</div>
     </div>
     <div>
       <small>{{customAppointment.date_day}} | {{customAppointment.start_time}}</small>

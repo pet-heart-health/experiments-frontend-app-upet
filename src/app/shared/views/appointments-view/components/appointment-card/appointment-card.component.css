@@ -32,6 +32,10 @@
   color: #333;
   background-color: #f0f0f0;
 }
+.cancelled{
+  color: #333;
+  background-color: red;
+}
 .state{
   border-radius:10px;
   padding: 5px 10px;

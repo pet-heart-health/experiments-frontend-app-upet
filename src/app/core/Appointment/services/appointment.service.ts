@@ -64,6 +64,12 @@ export class AppointmentService extends UpetApiService {
     );
   }
 
+  cancelAppointment(appointmentId: number, appointment: AppointmentSchemaUpdate): Observable<AppointmentSchemaGet> {
+    return this.http.put<AppointmentSchemaGet>(`${this.apiUrl}/${appointmentId}/cancel`,appointment).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Obtener citas futuras por ID de propietario
   getUpcomingAppointmentsByOwnerId(ownerId: number): Observable<AppointmentSchemaGet[]> {
     return this.http.get<AppointmentSchemaGet[]>(`${this.apiUrl}/owner/${ownerId}/upcoming`).pipe(
@@ -78,6 +84,13 @@ export class AppointmentService extends UpetApiService {
     );
   }
 
+  // Obtener citas canceladas por ID de propietario
+  getCancelledAppointmentsByOwnerId(ownerId: number): Observable<AppointmentSchemaGet[]> {
+    return this.http.get<AppointmentSchemaGet[]>(`${this.apiUrl}/owner/${ownerId}/cancelled`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Obtener citas futuras por ID de veterinario
   getUpcomingAppointmentsByVeterinarianId(veterinarianId: number): Observable<AppointmentSchemaGet[]> {
     return this.http.get<AppointmentSchemaGet[]>(`${this.apiUrl}/veterinarian/${veterinarianId}/upcoming`).pipe(
@@ -86,6 +99,11 @@ export class AppointmentService extends UpetApiService {
   }
   getPastAppointmentsByVeterinarianId(veterinarianId: number): Observable<AppointmentSchemaGet[]> {
     return this.http.get<AppointmentSchemaGet[]>(`${this.apiUrl}/veterinarian/${veterinarianId}/past`).pipe(
+      catchError(this.handleError)
+    );
+  }
+  getCancelledAppointmentsByVeterinarianId(veterinarianId: number): Observable<AppointmentSchemaGet[]> {
+    return this.http.get<AppointmentSchemaGet[]>(`${this.apiUrl}/veterinarian/${veterinarianId}/cancelled`).pipe(
       catchError(this.handleError)
     );
   }

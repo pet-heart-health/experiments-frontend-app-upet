@@ -29,5 +29,12 @@ export class ReviewService extends UpetApiService {
     );
   }
 
+  // Obtener reseñas por ID de veterinario
+  getReviewsByVeterinarianId(vetId: number): Observable<ReviewSchemaGet[]> {
+    return this.http.get<ReviewSchemaGet[]>(`${this.apiUrl}/vet/${vetId}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
 
 }

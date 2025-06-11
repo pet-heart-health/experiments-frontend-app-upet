@@ -5,7 +5,7 @@ import { VaccineService } from '../Vaccines/vaccine.service';
 import { SurgerieService } from '../Surgeries/surgerie.service';
 import { MedicResultService } from '../MedicResult/medic-result.service';
 import { MedicalHistorySchemaRequest, MedicalHistorySchemaResponse } from '../../schema/medical-result.interface';
-import { Observable } from 'rxjs';
+import {map, Observable, tap } from 'rxjs';
 import { DiseaseSchemaRequest } from '../../schema/disease.interface';
 import {Injectable} from "@angular/core";
 
@@ -41,6 +41,25 @@ export class MedicalHistoryBaseService extends UpetApiService {
     return this.http.get<MedicalHistorySchemaResponse>(`${this.apiUrl}/${medicalHistoryId}`);
   }
 
+  downloadMedicalPDF(petId: number): Observable<Blob> {
+    const url = `${this.getBaseUrl()}/pets/${petId}/medical-report`;
+
+    return this.http.get(url, {
+      responseType: 'blob',
+      observe: 'response'
+    }).pipe(
+      tap(response => {
+        console.log('Content-Type:', response.headers.get('Content-Type'));
+      }),
+      map(response => {
+        const blob = response.body;
+        if (blob && blob.type !== 'application/pdf') {
+          return new Blob([blob], { type: 'application/pdf' });
+        }
+        return blob as Blob;
+      })
+    );
+  }
 
 
 

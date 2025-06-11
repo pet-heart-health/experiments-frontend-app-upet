@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
 import {HomePetOwnerService} from "../../../views/pet-owner/home-pet-owner/services/home-pet-owner.service";
 import {DialogModule} from "primeng/dialog";
 import {FormAddPetComponent} from "../../../views/pet-owner/home-pet-owner/components/form-add-pet/form-add-pet.component";
@@ -11,7 +10,6 @@ import { PetSchemaResponse } from '../../../core/Pet/schema/pet.interface';
   selector: 'app-pet-card',
   standalone: true,
   imports: [
-    NgOptimizedImage,
     DialogModule,
     FormAddPetComponent,
   ],

@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class UpetApiService {
 
-  private readonly baseUrl: string = 'https://web-production-4270c.up.railway.app';
+  private readonly baseUrl: string = 'https://web-production-4270c.up.railway.app/api/v1';
 
   constructor(protected  http: HttpClient) {}
 

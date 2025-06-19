@@ -52,7 +52,7 @@ export class AppointmentsViewComponent {
         this.upcomingAppointments = appointments;
       });
       this.appointmentsService.getCancelledAppointmentsByOwnerId(userId).subscribe((appointments) => {
-        this.upcomingAppointments = appointments;
+        this.cancelledAppointments = appointments;
       });
     }
     else if(role == UserType.Vet) {

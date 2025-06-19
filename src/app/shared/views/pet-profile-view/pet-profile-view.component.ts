@@ -202,6 +202,26 @@ export class PetProfileViewComponent {
     this.dialogMapVisible = false;
   }
 
+  downloadMedicalPDF() {
+    if (!this.petId) return;
+
+    this.historyApiService.downloadMedicalPDF(this.petId).subscribe({
+      next: (blob: Blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `historial-medico-${this.pet?.name || this.petId}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      },
+      error: (error) => {
+        console.error('Error al descargar PDF', error);
+        alert('Error al descargar el archivo PDF');
+      }
+    });
+  }
   protected readonly TypeForm = TypeForm;
   protected readonly UserType = UserType;
 }

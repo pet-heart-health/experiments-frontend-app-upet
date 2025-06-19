@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import {ReviewService} from "../../../core/review/services/review.service";
 import {ReviewSchemaGet} from "../../../core/review/schema/review.interface";
 import {NgForOf} from "@angular/common";
@@ -15,16 +15,6 @@ import {ReviewCardComponent} from "../review-card/review-card.component";
   styleUrl: './vet-list-review.component.css'
 })
 export class VetListReviewComponent {
-
-  reviews: ReviewSchemaGet[] = [];
-
-  constructor(private reviewService:ReviewService) {}
-
-  ngOnInit() {
-    //CAMBIAR EL ENDPOINT PARA QUE TRAIGA LAS REVIEWS DE UNA VETERINARIA EN ESPECIFICO
-    this.reviewService.getReviews().subscribe((data: ReviewSchemaGet[]) => {
-      this.reviews = data.reverse();
-
-    });
-  }
+  @Input() reviews: ReviewSchemaGet[] = [];
+  constructor() {}
 }

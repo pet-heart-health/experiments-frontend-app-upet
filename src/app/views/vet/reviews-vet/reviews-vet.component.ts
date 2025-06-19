@@ -3,9 +3,9 @@ import {ReviewCardComponent} from "../../../shared/components/review-card/review
 import {ReviewService} from "../../../core/review/services/review.service";
 import {ReviewSchemaGet} from "../../../core/review/schema/review.interface";
 import {NgForOf, NgIf} from "@angular/common";
-import {AuthService} from "../../../core/auth/services/auth.service";
-import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/veterinarian.interface";
-import {VeterinarianService} from "../../../core/Veterinarian/services/veterinarian.service";
+import { AuthService } from '../../../core/auth/services/auth.service';
+import { VeterinarianService } from '../../../core/Veterinarian/services/veterinarian.service';
+import { VeterinarianSchemaResponse } from '../../../core/Veterinarian/schema/veterinarian.interface';
 import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
 
 @Component({
@@ -25,22 +25,20 @@ export class ReviewsVetComponent {
   id2 : number = 0;
   reviews:ReviewSchemaGet[] = [];
 
-  constructor(private reviewsService:ReviewService,private authService:AuthService,
-  private vetService:VeterinarianService) {
-    this.userClaims = this.authService.decodeToken()!;
+  constructor(
+    private vetService:VeterinarianService,
+    private authService:AuthService,
+    private reviewsService:ReviewService
+  ) {
   }
 
   ngOnInit() {
-
-    const userId = this.userClaims?.user_id!;
+    let userClaims = this.authService.decodeToken()!;
+    const userId = userClaims?.user_id!;
     this.vetService.getVeterinarianById(userId).subscribe((res:VeterinarianSchemaResponse) => {
-      this.id2 = res.id;
-    });
-    /*this.reviewsService.getReviewsByVeterinarianId(this.id2!).subscribe((reviews) => {
-      this.reviews = reviews;
-    });*/
-    this.reviewsService.getReviews().subscribe((reviews) => {
-      this.reviews = reviews;
+      this.reviewsService.getReviewsByVetId(res.id).subscribe((reviews) => {
+        this.reviews = reviews;
+      });
     });
   }
 }

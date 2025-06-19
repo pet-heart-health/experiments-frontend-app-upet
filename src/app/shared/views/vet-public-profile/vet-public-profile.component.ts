@@ -20,6 +20,8 @@ import {ReviewFormDialogComponent} from "../../components/review-form-dialog/rev
 import {
     AppointmentFormDialogComponent
 } from "../../components/appointment-form-dialog/appointment-form-dialog.component";
+import { ReviewSchemaGet } from '../../../core/review/schema/review.interface';
+import { ReviewService } from '../../../core/review/services/review.service';
 
 @Component({
   selector: 'app-vet-public-profile',
@@ -44,11 +46,13 @@ import {
 export class VetPublicProfileComponent {
     vet:VeterinarianSchemaResponse = {} as VeterinarianSchemaResponse;
     clinic:VeterinaryClinicSchemaGet = {} as VeterinaryClinicSchemaGet;
+    reviews: ReviewSchemaGet[] = [];
     visibleReviewDialog: boolean = false;
     visibleAppointmentDialog: boolean = false;
 
     constructor(
       private veterinarianService:VeterinarianService,
+      private reviewService:ReviewService,
       private veterinaryClinicService:VeterinaryClinicService,
       private activatedRoute:ActivatedRoute
       ) {
@@ -61,7 +65,14 @@ export class VetPublicProfileComponent {
           this.clinic = data;
         });
       });
+      this.loadReviews();
+    }
 
+    loadReviews() {
+      // Hacemos la llamada a la API solo cuando vetId cambia y es válido
+      this.reviewService.getReviewsByVetId(this.vet.id).subscribe((data: ReviewSchemaGet[]) => {
+        this.reviews = data.reverse();
+      });
     }
     submitReview(){
 
@@ -72,6 +83,7 @@ export class VetPublicProfileComponent {
     openReviewDialog(){
       this.visibleReviewDialog = true;
     }
+
 
     closeAppointmentDialog=()=>{
       this.visibleAppointmentDialog = false;

@@ -7,12 +7,16 @@ import {PetOwnerService} from "../../../core/PetOwner/services/pet-owner.service
 import {UserType} from "../../../core/auth/enum/UserType.enum";
 import {VeterinarianService} from "../../../core/Veterinarian/services/veterinarian.service";
 import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/veterinarian.interface";
+import {Subscription} from "rxjs";
+import {ThemeService} from "../../service/theme.service";
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    Button
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
@@ -20,11 +24,15 @@ import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/vete
 export class NavBarComponent {
   user: DecodedToken | null;
   data: PetOwnerSchemaGet | VeterinarianSchemaResponse = {} as PetOwnerSchemaGet;
+  isDarkTheme = false;
+  private themeSubscription?: Subscription;
 
   constructor(
     private authService: AuthService,
     private petOwnerService: PetOwnerService,
-    private vetService: VeterinarianService
+    private vetService: VeterinarianService,
+    private themeService: ThemeService
+
   ) {
     this.user = this.authService.decodeToken();
     if (this.user?.user_role === UserType.Owner) {
@@ -39,5 +47,21 @@ export class NavBarComponent {
           this.data = vet;
         });
     }
+
+
+  }
+
+  ngOnInit() {
+    this.themeSubscription = this.themeService.isDarkTheme$
+      .subscribe(isDark => { this.isDarkTheme = isDark; });
+  }
+  ngOnDestroy() {
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
   }
 }

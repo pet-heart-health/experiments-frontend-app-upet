@@ -26,7 +26,7 @@ export class ThemeService {
 
   setDarkTheme(isDark: boolean): void {
     this.isDarkTheme.next(isDark);
-    
+
     // Aplicar clase al body
     if (isDark) {
       document.body.classList.add('dark-theme');
@@ -35,7 +35,7 @@ export class ThemeService {
       document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
     }
-    
+
     // Guardar en localStorage
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }

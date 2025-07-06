@@ -8,7 +8,7 @@
       </div>
   </div>
   <div class="body-clinic-profile pl-4 mt-4">
-    <div class="section-title">General information:</div>
+    <div class="section-title">{{"clinic_profile.general_info" | translate}}</div>
     <div class="field-container">
         <div class="field-logo">
           <span class="pi pi-phone"></span>
@@ -43,11 +43,11 @@
     </div>
   </div>
   <div class="footer-clinic-profile mt-3 pl-4">
-      <div class="section-title">About us:</div>
+      <div class="section-title">{{"clinic_profile.about_us" | translate}} :</div>
     <div> {{clinic.description}}</div>
   </div>
   <div class="specialist-clinic-profile mt-3 pl-4">
-    <div class="section-title">Our specialists:</div>
+    <div class="section-title">{{"clinic_profile.our_specialists" | translate}} :</div>
     <div class="specialist-container mb-5">
       <app-vet-card *ngFor="let vet of vets" [vet]="vet"></app-vet-card>
   </div>

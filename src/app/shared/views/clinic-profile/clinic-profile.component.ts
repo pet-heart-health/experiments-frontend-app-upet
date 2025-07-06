@@ -6,6 +6,7 @@ import {JsonPipe, NgForOf} from "@angular/common";
 import {VetCardComponent} from "../../components/vet-card/vet-card.component";
 import {VeterinarianService} from "../../../core/Veterinarian/services/veterinarian.service";
 import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/veterinarian.interface";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-clinic-profile',
@@ -13,7 +14,8 @@ import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/vete
   imports: [
     JsonPipe,
     VetCardComponent,
-    NgForOf
+    NgForOf,
+    TranslatePipe
   ],
   templateUrl: './clinic-profile.component.html',
   styleUrl: './clinic-profile.component.css'

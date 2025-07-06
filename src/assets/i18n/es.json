@@ -1,0 +1,184 @@
+{
+  "banner": {
+    "title": "¡Bienvenido, {{name}}!",
+    "content": "Nos alegra tenerte aquí.",
+    "tip": "Asegúrate de llevar a tu mascota al veterinario al menos una vez al año."
+  },
+  "list_owner_pets": {
+    "title": "Mis mascotas",
+    "btn_add_pet": "Añadir mascota",
+    "btn_all_pets": "Ver todas"
+  },
+  "list_specialists_nearby": {
+    "title": "Especialistas cercanos",
+    "btn_see_all": "Ver todos"
+  },
+  "form_add_pet": {
+    "upload_image": "Subir imagen",
+    "title": "Añadir mascota",
+    "name": "Nombre de la mascota",
+    "species": "Especie",
+    "breed": "Raza",
+    "age": "Edad",
+    "weight": "Peso",
+    "gender": "Género",
+    "birthdate": "Fecha de nacimiento",
+    "btn_save": "Guardar",
+    "btn_cancel": "Cancelar",
+    "btn_add": "Añadir",
+    "btn_edit": "Editar"
+  },
+  "pets": {
+    "title": "Mis mascotas",
+    "btn_add_pet": "Añadir mascota"
+  },
+  "clinics": {
+    "title": "Clínicas cercanas",
+    "see_map": "Ver mapa"
+  },
+  "profile": {
+    "upload_photo": "Subir foto",
+    "title": "Mi Perfil",
+    "form_title": "Editar Perfil",
+    "general_info": "Información General",
+
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+
+    "btn_save": "Guardar",
+    "btn_cancel": "Cancelar"
+  },
+  "search_bar": {
+    "btn_clear": "Limpiar",
+    "placeholder": "Buscar"
+  },
+  "review_form": {
+    "description": "Descripción",
+    "stars": "Estrellas",
+    "btn_cancel": "Cancelar",
+    "btn_save": "Guardar"
+  },
+  "pet_card": {
+    "view": "Ver",
+    "edit": "Editar",
+    "edit_pet_title": "Editar mascota"
+  },
+  "map": {
+    "title": "Mi ubicación"
+  },
+  "clinic_card": {
+    "view": "ver",
+    "date": "citar"
+  },
+  "appointment_form": {
+    "title": "Hacer una cita",
+    "date": "Seleccionar fecha",
+    "hour": "Seleccionar hora",
+    "pet": "Seleccionar mascota",
+    "select_pet_placeholder": "Selecciona tu mascota",
+    "problem": "Problema de la mascota",
+    "btn_cancel": "Cancelar",
+    "btn_save": "Guardar"
+  },
+  "pet_owner_sidebar": {
+    "home": "Inicio",
+    "my_pets": "Mis mascotas",
+    "clinics": "Clínicas",
+    "profile": "Perfil",
+    "appointments": "Citas",
+    "notifications": "Notificaciones",
+    "logout": "Cerrar sesión"
+  },
+  "home_vet": {
+    "title": "!Bienvenido, {{name}}!",
+    "content": "Nos alegra tenerte aquí.",
+    "tip": "Asegúrate de llevar a tu mascota al veterinario al menos una vez al año.",
+    "appointments_upcoming": "Citas próximas"
+  },
+  "profile_vet": {
+    "title": "Mi Perfil",
+    "edit_profile": "Editar Perfil",
+    "generate_password": "Generar contraseña",
+    "general_info": "Información General",
+    "email": "Correo electrónico",
+    "experience": "Experiencia",
+    "years": "Años",
+    "description": "Descripción",
+    "upload_photo": "Subir foto",
+    "name": "Nombre",
+    "btn_cancel": "Cancelar",
+    "btn_save": "Guardar",
+    "password_paragraph": "Esta contraseña permite a otro veterinario unirse a tu actual clinica in la aplicación.",
+    "your_password": "Tu contraseña es",
+    "password_header": "Contraseña",
+    "password_close": "Cerrar"
+  },
+  "reviews": {
+    "title": "Reseñas",
+    "no_reviews": "No hay reseñas aún"
+  },
+  "appointments": {
+    "title": "Citas"
+  },
+  "clinic_profile": {
+    "general_info": "Información General",
+    "about_us": "Sobre nosotros",
+    "our_specialists": "Nuestros especialistas"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "no_notifications": "No hay notificaciones"
+  },
+
+  "pet_profile": {
+    "edit_profile": "Editar perfil",
+    "stop_tracking": "Dejar de rastrear",
+    "start_tracking": "Comenzar a rastrear",
+    "breed": "Raza",
+    "species": "Especie",
+    "weight": "Peso",
+    "birthdate": "Fecha de nacimiento",
+    "more_info": "Más información",
+    "medical_results": "Resultados médicos",
+    "diseases": "Enfermedades",
+    "surgeries": "Cirugías",
+    "vaccines": "Vacunas",
+    "download_medical_history": "Descargar historial médico",
+    "edit_pet": "Editar mascota"
+  },
+  "disease": {
+    "name": "Nombre",
+    "severity": "Severidad",
+    "result_date": "Fecha del resultado",
+    "btn_add": "Añadir enfermedad",
+    "no_diseases": "No hay enfermedades registradas"
+  },
+
+  "medical_result": {
+    "result_type": "Tipo de resultado",
+    "description": "Descripción",
+    "result_date": "Fecha del resultado",
+    "no_results": "No hay resultados médicos registrados",
+    "btn_add": "Añadir resultado"
+  },
+
+  "surgery": {
+    "description": "Descripción",
+    "surgery_date": "Fecha de la cirugía",
+    "no_surgeries": "No hay cirugías registradas",
+    "btn_add": "Añadir cirugía"
+  },
+
+  "vaccine": {
+    "name": "Nombre",
+    "type": "Tipo",
+    "dose": "Dosis",
+    "location": "Ubicación",
+    "result_date": "Fecha del resultado",
+    "btn_add": "Añadir vacuna",
+    "no_vaccines": "No hay vacunas registradas"
+  }
+
+}

@@ -10,6 +10,7 @@ import {ReviewService} from "../../../core/review/services/review.service";
 import {ReviewSchemaPost} from "../../../core/review/schema/review.interface";
 import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
 import {AuthService} from "../../../core/auth/services/auth.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-review-form-dialog',
@@ -22,7 +23,8 @@ import {AuthService} from "../../../core/auth/services/auth.service";
     InputTextModule,
     ReactiveFormsModule,
     SliderModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TranslatePipe
   ],
   templateUrl: './review-form-dialog.component.html',
   styleUrl: './review-form-dialog.component.css'

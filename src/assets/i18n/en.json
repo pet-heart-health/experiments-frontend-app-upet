@@ -1,0 +1,177 @@
+{
+  "banner": {
+    "title": "Welcome, {{name}}!",
+    "content": "We are happy to have you here.",
+    "tip": "Make sure to take your pet to the vet at least once a year."
+  },
+  "list_owner_pets": {
+    "title": "My pets",
+    "btn_add_pet": "Add pet",
+    "btn_all_pets": "See all"
+  },
+  "list_specialists_nearby": {
+    "title": "Nearby specialists",
+    "btn_see_all": "See all"
+  },
+  "form_add_pet": {
+    "upload_image": "Upload image",
+    "title": "Add pet",
+    "name": "Pet's name",
+    "species": "Species",
+    "breed": "Breed",
+    "age": "Age",
+    "weight": "Weight",
+    "gender": "Gender",
+    "birthdate": "Birthdate",
+    "btn_save": "Save",
+    "btn_cancel": "Cancel",
+    "btn_add": "Add",
+    "btn_edit": "Edit"
+  },
+  "pets": {
+    "title": "My pets",
+    "btn_add_pet": "Add pet"
+  },
+  "clinics": {
+    "title": "Nearby clinics",
+    "see_map": "See map"
+  },
+  "profile": {
+    "upload_photo": "Upload photo",
+    "title": "My Profile",
+    "form_title": "Edit Profile",
+    "general_info": "General Information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "btn_save": "Save",
+    "btn_cancel": "Cancel"
+  },
+  "search_bar": {
+    "btn_clear": "Clear",
+    "placeholder": "Search"
+  },
+  "review_form": {
+    "description": "Description",
+    "stars": "Stars",
+    "btn_cancel": "Cancel",
+    "btn_save": "Save"
+  },
+  "pet_card": {
+    "view": "View",
+    "edit": "Edit",
+    "edit_pet_title": "Edit pet"
+  },
+  "map": {
+    "title": "My location"
+  },
+  "clinic_card": {
+    "view": "View",
+    "date": "Book"
+  },
+  "appointment_form": {
+    "title": "Make an appointment",
+    "date": "Select date",
+    "hour": "Select time",
+    "pet": "Select pet",
+    "select_pet_placeholder": "Select your pet",
+    "problem": "Pet's problem",
+    "btn_cancel": "Cancel",
+    "btn_save": "Save"
+  },
+  "pet_owner_sidebar": {
+    "home": "Home",
+    "my_pets": "My pets",
+    "clinics": "Clinics",
+    "profile": "Profile",
+    "appointments": "Appointments",
+    "notifications": "Notifications",
+    "logout": "Log out"
+  },
+  "home_vet": {
+    "title": "Welcome, {{name}}!",
+    "content": "We are happy to have you here.",
+    "tip": "Make sure to take your pet to the vet at least once a year.",
+    "appointments_upcoming": "Upcoming appointments"
+  },
+  "profile_vet": {
+    "title": "My Profile",
+    "edit_profile": "Edit Profile",
+    "generate_password": "Generate password",
+    "general_info": "General Information",
+    "email": "Email",
+    "experience": "Experience",
+    "years": "Years",
+    "description": "Description",
+    "upload_photo": "Upload photo",
+    "name": "Name",
+    "btn_cancel": "Cancel",
+    "btn_save": "Save",
+    "password_paragraph": "This password allows another vet to join your current clinic in the app.",
+    "your_password": "Your password is",
+    "password_header": "Password",
+    "password_close": "Close"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "no_reviews": "No reviews yet"
+  },
+  "appointments": {
+    "title": "Appointments"
+  },
+  "clinic_profile": {
+    "general_info": "General Information",
+    "about_us": "About us",
+    "our_specialists": "Our specialists"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "no_notifications": "No notifications"
+  },
+  "pet_profile": {
+    "edit_profile": "Edit profile",
+    "stop_tracking": "Stop tracking",
+    "start_tracking": "Start tracking",
+    "breed": "Breed",
+    "species": "Species",
+    "weight": "Weight",
+    "birthdate": "Birthdate",
+    "more_info": "More information",
+    "medical_results": "Medical results",
+    "diseases": "Diseases",
+    "surgeries": "Surgeries",
+    "vaccines": "Vaccines",
+    "download_medical_history": "Download medical history",
+    "edit_pet": "Edit pet"
+  },
+  "disease": {
+    "name": "Name",
+    "severity": "Severity",
+    "result_date": "Result date",
+    "btn_add": "Add disease",
+    "no_diseases": "No diseases recorded"
+  },
+  "medical_result": {
+    "result_type": "Result type",
+    "description": "Description",
+    "result_date": "Result date",
+    "no_results": "No medical results recorded",
+    "btn_add": "Add result"
+  },
+  "surgery": {
+    "description": "Description",
+    "surgery_date": "Surgery date",
+    "no_surgeries": "No surgeries recorded",
+    "btn_add": "Add surgery"
+  },
+  "vaccine": {
+    "name": "Name",
+    "type": "Type",
+    "dose": "Dose",
+    "location": "Location",
+    "result_date": "Result date",
+    "btn_add": "Add vaccine",
+    "no_vaccines": "No vaccines recorded"
+  }
+}

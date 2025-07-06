@@ -1,6 +1,6 @@
   <form [formGroup]="myForm" (submit)="submitReview()" class="flex w-full flex-column align-items-center justify-content-center">
     <div class="card flex flex-column justify-content-center">
-      <label for="float-input">Description</label>
+      <label for="float-input">{{"review_form.description" | translate}}</label>
       <textarea
           id="float-input"
           rows="5"
@@ -11,7 +11,7 @@
     </div>
     <div>
       <div>
-        Stars <span class="pi pi-star-fill"></span>
+        {{"review_form.stars" | translate}} <span class="pi pi-star-fill"></span>
       </div>
       <div class="card flex justify-content-center">
         <p-slider formControlName="stars" [step]="1" styleClass="w-14rem" [max]="5" [min]="1"/>
@@ -20,10 +20,10 @@
 
     <div class="flex justify-content-around gap-2 mb-4 mt-5 w-full">
       <div class="card flex align-items-center justify-content-between">
-        <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()"/>
+        <p-button [label]="'review_form.btn_cancel' | translate" severity="secondary" (onClick)="closeDialog()"/>
       </div>
       <div class="card flex justify-content-center submit-btn">
-        <p-button label="Save" type="submit"/>
+        <p-button [label]="'review_form.btn_save' | translate" type="submit"/>
       </div>
     </div>
   </form>

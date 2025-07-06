@@ -21,6 +21,7 @@ import {TypeForm} from "../home-pet-owner/interfaces/type-form.enum";
 import {PetResponse} from "../home-pet-owner/interfaces/PetResponse";
 import {UploadService} from "../../../shared/service/upload.service";
 import {firstValueFrom} from "rxjs";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-profile-pet-owner',
@@ -35,7 +36,8 @@ import {firstValueFrom} from "rxjs";
     InputTextModule,
     NgIf,
     ReactiveFormsModule,
-    ToastModule
+    ToastModule,
+    TranslatePipe
   ],
   templateUrl: './profile-pet-owner.component.html',
   styleUrl: './profile-pet-owner.component.css'

@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center justify-center w-full h-full ">
-  <h1 class="title-section">My pets</h1>
+  <h1 class="title-section">{{"pets.title" | translate}}</h1>
   <div class="flex items-end justify-end w-full mr-4">
-    <button class="btn-primary" (click)="openDialogAddPet()">+Add pet</button>
+    <button class="btn-primary" (click)="openDialogAddPet()">+ {{"pets.btn_add_pet"  | translate}}</button>
   </div>
 
 <!--  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">-->
@@ -12,6 +12,7 @@
     <app-pet-card *ngFor="let pet of pets" [pet]="pet"></app-pet-card>
   </div>
 </div>
+
 <p-dialog header="Add pet" [modal]="true" [(visible)]="visibleAddPet" [style]="{ width: '40rem' }">
   <app-form-add-pet [closeDialog]="closeDialogAddPet" [mode]="TypeForm.ADD"></app-form-add-pet>
 </p-dialog>

@@ -1,7 +1,7 @@
 <div class="w-full flex flex-row">
   <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
     <div class="flex flex-column gap-2">
-      <label for="name">Name</label>
+      <label for="name">{{"vaccine.name" | translate}}</label>
       <input
         formControlName="name"
         class="input"
@@ -10,7 +10,7 @@
         aria-describedby="username-help"/>
     </div>
     <div class="flex flex-column gap-2">
-      <label for="type">Type</label>
+      <label for="type">{{"vaccine.type" | translate}}</label>
       <input
         formControlName="vaccineType"
         class="input"
@@ -19,7 +19,7 @@
         aria-describedby="username-help"/>
     </div>
     <div class="flex flex-column gap-2">
-      <label for="dose">Dose</label>
+      <label for="dose">{{"vaccine.dose" | translate}}</label>
       <input
         formControlName="dose"
         class="input"
@@ -28,7 +28,7 @@
         aria-describedby="username-help"/>
     </div>
     <div class="flex flex-column gap-2">
-      <label for="dose">Location</label>
+      <label for="dose">{{"vaccine.location" | translate}}</label>
       <input
         formControlName="location"
         class="input"
@@ -37,7 +37,7 @@
         aria-describedby="username-help"/>
     </div>
     <div class="card flex flex-column gap-2 justify-content-center">
-      <label for="date" class=""> Result date </label>
+      <label for="date" class=""> {{"vaccine.result_date" | translate}} </label>
       <p-calendar
         formControlName="vaccineDate"
         class="input"
@@ -47,20 +47,20 @@
         inputId="icondisplay" />
     </div>
     <div class="card flex justify-content-center mt-4">
-      <p-button label="Add Vaccine" class="button-secondary" type="submit"/>
+      <p-button [label]="'vaccine.btn_add' | translate" class="button-secondary" type="submit"/>
     </div>
   </form>
   <p-divider layout="vertical" />
   <div class="w-full flex-column results-container">
     <p *ngIf="vaccines.length==0">
-      No vaccines registered
+      {{"vaccine.no_vaccines" | translate}}
     </p>
     <div *ngFor="let result of vaccines" class="medical-result mb-4">
-      <div>Name: {{result.name}}</div>
-      <div>Type: {{result.vaccineType}}</div>
-      <div>Dose: {{result.dose}}</div>
-      <div>Location: {{result.location}}</div>
-      <div>Date: {{result.vaccineDate}}</div>
+      <div>{{"vaccine.name" | translate}}: {{result.name}}</div>
+      <div>{{"vaccine.type" | translate}}: {{result.vaccineType}}</div>
+      <div>{{"vaccine.dose" | translate}}: {{result.dose}}</div>
+      <div>{{"vaccine.location" | translate}}: {{result.location}}</div>
+      <div>{{"vaccine.result_date" | translate}}: {{result.vaccineDate}}</div>
       <hr/>
     </div>
   </div>

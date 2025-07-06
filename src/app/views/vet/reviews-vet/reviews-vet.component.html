@@ -1,8 +1,8 @@
 <div class="vet-reviews w-full">
-  <div class="title-section">Reviews</div>
+  <div class="title-section">{{"reviews.title" | translate}}</div>
   <div class="reviews-container w-full">
     <p *ngIf="reviews.length==0">
-      No reviews yet
+      {{"reviews.no_reviews" | translate}}
     </p>
     <app-review-card *ngFor="let review of reviews" [review]="review"></app-review-card>
   </div>

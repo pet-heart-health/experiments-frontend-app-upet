@@ -1,0 +1,177 @@
+{
+  "banner": {
+    "title": "ようこそ、{{name}}さん！",
+    "content": "お越しいただきありがとうございます。",
+    "tip": "少なくとも年に一度はペットを獣医に連れて行ってください。"
+  },
+  "list_owner_pets": {
+    "title": "私のペット",
+    "btn_add_pet": "ペットを追加",
+    "btn_all_pets": "すべて表示"
+  },
+  "list_specialists_nearby": {
+    "title": "近くの専門家",
+    "btn_see_all": "すべて表示"
+  },
+  "form_add_pet": {
+    "upload_image": "画像をアップロード",
+    "title": "ペットを追加",
+    "name": "ペットの名前",
+    "species": "種別",
+    "breed": "品種",
+    "age": "年齢",
+    "weight": "体重",
+    "gender": "性別",
+    "birthdate": "生年月日",
+    "btn_save": "保存",
+    "btn_cancel": "キャンセル",
+    "btn_add": "追加",
+    "btn_edit": "編集"
+  },
+  "pets": {
+    "title": "私のペット",
+    "btn_add_pet": "ペットを追加"
+  },
+  "clinics": {
+    "title": "近くのクリニック",
+    "see_map": "地図を見る"
+  },
+  "profile": {
+    "upload_photo": "写真をアップロード",
+    "title": "マイプロフィール",
+    "form_title": "プロフィールを編集",
+    "general_info": "基本情報",
+    "name": "名前",
+    "email": "メール",
+    "phone": "電話番号",
+    "location": "場所",
+    "btn_save": "保存",
+    "btn_cancel": "キャンセル"
+  },
+  "search_bar": {
+    "btn_clear": "クリア",
+    "placeholder": "検索"
+  },
+  "review_form": {
+    "description": "説明",
+    "stars": "星",
+    "btn_cancel": "キャンセル",
+    "btn_save": "保存"
+  },
+  "pet_card": {
+    "view": "表示",
+    "edit": "編集",
+    "edit_pet_title": "ペットを編集"
+  },
+  "map": {
+    "title": "現在地"
+  },
+  "clinic_card": {
+    "view": "表示",
+    "date": "予約"
+  },
+  "appointment_form": {
+    "title": "予約する",
+    "date": "日付を選択",
+    "hour": "時間を選択",
+    "pet": "ペットを選択",
+    "select_pet_placeholder": "ペットを選択してください",
+    "problem": "ペットの問題",
+    "btn_cancel": "キャンセル",
+    "btn_save": "保存"
+  },
+  "pet_owner_sidebar": {
+    "home": "ホーム",
+    "my_pets": "私のペット",
+    "clinics": "クリニック",
+    "profile": "プロフィール",
+    "appointments": "予約",
+    "notifications": "通知",
+    "logout": "ログアウト"
+  },
+  "home_vet": {
+    "title": "ようこそ、{{name}}さん！",
+    "content": "お越しいただきありがとうございます。",
+    "tip": "少なくとも年に一度はペットを獣医に連れて行ってください。",
+    "appointments_upcoming": "今後の予約"
+  },
+  "profile_vet": {
+    "title": "マイプロフィール",
+    "edit_profile": "プロフィールを編集",
+    "generate_password": "パスワードを生成",
+    "general_info": "基本情報",
+    "email": "メール",
+    "experience": "経験",
+    "years": "年",
+    "description": "説明",
+    "upload_photo": "写真をアップロード",
+    "name": "名前",
+    "btn_cancel": "キャンセル",
+    "btn_save": "保存",
+    "password_paragraph": "このパスワードを使って他の獣医があなたのクリニックに参加できます。",
+    "your_password": "あなたのパスワードは",
+    "password_header": "パスワード",
+    "password_close": "閉じる"
+  },
+  "reviews": {
+    "title": "レビュー",
+    "no_reviews": "まだレビューはありません"
+  },
+  "appointments": {
+    "title": "予約"
+  },
+  "clinic_profile": {
+    "general_info": "基本情報",
+    "about_us": "私たちについて",
+    "our_specialists": "専門家"
+  },
+  "notifications": {
+    "title": "通知",
+    "no_notifications": "通知はありません"
+  },
+  "pet_profile": {
+    "edit_profile": "プロフィールを編集",
+    "stop_tracking": "追跡を停止",
+    "start_tracking": "追跡を開始",
+    "breed": "品種",
+    "species": "種別",
+    "weight": "体重",
+    "birthdate": "生年月日",
+    "more_info": "詳細情報",
+    "medical_results": "医療結果",
+    "diseases": "病気",
+    "surgeries": "手術",
+    "vaccines": "ワクチン",
+    "download_medical_history": "医療履歴をダウンロード",
+    "edit_pet": "ペットを編集"
+  },
+  "disease": {
+    "name": "名前",
+    "severity": "重症度",
+    "result_date": "結果日",
+    "btn_add": "病気を追加",
+    "no_diseases": "登録された病気はありません"
+  },
+  "medical_result": {
+    "result_type": "結果の種類",
+    "description": "説明",
+    "result_date": "結果日",
+    "no_results": "登録された医療結果はありません",
+    "btn_add": "結果を追加"
+  },
+  "surgery": {
+    "description": "説明",
+    "surgery_date": "手術日",
+    "no_surgeries": "登録された手術はありません",
+    "btn_add": "手術を追加"
+  },
+  "vaccine": {
+    "name": "名前",
+    "type": "タイプ",
+    "dose": "投与量",
+    "location": "場所",
+    "result_date": "結果日",
+    "btn_add": "ワクチンを追加",
+    "no_vaccines": "登録されたワクチンはありません"
+  }
+}

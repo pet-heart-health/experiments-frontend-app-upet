@@ -14,6 +14,7 @@ import {DecodedToken} from "../../../../../core/auth/schema/decoded-token.interf
 import {AuthService} from "../../../../../core/auth/services/auth.service";
 import {PetOwnerSchemaGet} from "../../../../../core/PetOwner/schema/petowner.interface";
 import {PetOwnerService} from "../../../../../core/PetOwner/services/pet-owner.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-list-owner-pets',
@@ -22,7 +23,8 @@ import {PetOwnerService} from "../../../../../core/PetOwner/services/pet-owner.s
     PetCardComponent,
     NgForOf,
     FormAddPetComponent,
-    DialogModule
+    DialogModule,
+    TranslatePipe
   ],
   templateUrl: './list-owner-pets.component.html',
   styleUrl: './list-owner-pets.component.css'

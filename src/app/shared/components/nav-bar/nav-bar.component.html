@@ -4,8 +4,26 @@
     <img src="assets/logooo.png" alt="Logo" class=""  >
   </div>
 
+
   <div class="flex items-center">
-    <img [src]="data.image_url" alt="User Photo" class="h-8  rounded-full mr-2">
-    <span class="text-white">{{data.name}}</span>
+    <p-dropdown
+      class="mr-3"
+      [options]="languages"
+      [(ngModel)]="selectedLanguage"
+      (onChange)="switchLanguage($event.value)"
+      [style]="{'width':'150px'}"
+      optionLabel="label"
+      showClear="false"
+      appendTo="body"
+    >
+    </p-dropdown>
+    <div class="flex items-center">
+      <img [src]="data.image_url" alt="User Photo" class="h-8  rounded-full mr-2">
+      <span class="text-white">{{data.name}}</span>
+    </div>
   </div>
+
+
 </nav>
+
+

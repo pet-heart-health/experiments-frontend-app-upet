@@ -9,6 +9,7 @@ import {formatDateToYYYYMMDD} from "../../../../helpers/date.formater";
 import { MedicalHistoryBaseService } from '../../../../../core/MedicalHistory/services/shared/medical-history-base.service';
 import { MedicalHistorySchemaRequest, MedicalHistorySchemaResponse } from '../../../../../core/MedicalHistory/schema/medical-result.interface';
 import { MedicResultService } from '../../../../../core/MedicalHistory/services/MedicResult/medic-result.service';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-medical-results',
@@ -21,7 +22,8 @@ import { MedicResultService } from '../../../../../core/MedicalHistory/services/
     NgForOf,
     DividerModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './medical-results.component.html',
   styleUrl: './medical-results.component.css'

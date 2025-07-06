@@ -7,14 +7,14 @@
   </div>
   <div class="card-pet-actions">
     <button class="delete-button" (click)="toProfile()">
-      <i class="pi pi-eye"></i> View
+      <i class="pi pi-eye"></i> {{ "pet_card.view" | translate }}
     </button>
     <button class="edit-button" (click)="openDialogEdit()">
-      <i class="pi pi-pencil"></i> Edit
+      <i class="pi pi-pencil"></i> {{ "pet_card.edit" | translate }}
     </button>
   </div>
 </div>
 
-<p-dialog header="Edit pet" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
+<p-dialog [header]="'pet_card.edit_pet_title' | translate" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
   <app-form-add-pet [pet]="pet" [closeDialog]="closeDialogEdit" [mode]="TypeForm.EDIT"></app-form-add-pet>
 </p-dialog>

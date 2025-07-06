@@ -13,31 +13,31 @@
           maxFileSize="1000000"
           [auto]="true"
           (onSelect)="onImageSelect($event)"
-          chooseLabel="upload photo">
+          [chooseLabel]="'form_add_pet.upload_image' | translate">
         </p-fileUpload>
       </div>
       <div class="card flex justify-content-center mt-5 mb-4">
         <p-floatLabel>
           <input pInputText id="name" formControlName="name" />
-          <label for="name">Name</label>
+          <label for="name">{{"form_add_pet.name" | translate}}</label>
         </p-floatLabel>
       </div>
       <div class="card flex justify-content-center mb-4">
         <p-floatLabel>
           <input pInputText id="breed" formControlName="breed" />
-          <label for="name">Breed</label>
+          <label for="breed">{{"form_add_pet.breed" | translate}}</label>
         </p-floatLabel>
       </div>
       <div class="card flex justify-content-center mb-4">
         <p-floatLabel>
           <input pInputText id="species" formControlName="species" />
-          <label for="name">Species</label>
+          <label for="species">{{"form_add_pet.species" | translate}}</label>
         </p-floatLabel>
       </div>
       <div class="card flex justify-content-center mb-4">
         <p-floatLabel>
           <input type="number" pInputText id="weight" formControlName="weight" />
-          <label for="name">Weight</label>
+          <label for="weight">{{"form_add_pet.weight" | translate}}</label>
         </p-floatLabel>
       </div>
       <div class="card flex justify-content-center mb-4">
@@ -45,13 +45,14 @@
           [options]="genders"
           formControlName="gender"
           optionLabel="name"
-          placeholder = "Gender"
+          [placeholder] = "'form_add_pet.gender' | translate"
           [style]="{'width':'15rem'}"/>
       </div>
       <div class="card flex justify-content-center mb-4">
         <p-floatLabel>
         <p-calendar
           formControlName="birthdate"
+          [placeholder]="'form_add_pet.birthdate' | translate"
           [showIcon]="true"
           id="birth_date"
           [touchUI]="true"
@@ -59,7 +60,7 @@
         </p-floatLabel>
       </div>
       <div class="flex justify-content-around gap-2 mb-4">
-        <p-button label="Cancel" severity="secondary" (onClick)="closeDialog()" />
+        <p-button [label]="'form_add_pet.btn_cancel' | translate" severity="secondary" (onClick)="closeDialog()" />
         <p-button [label]="buttonTitle" (onClick)="submitForm()"/>
       </div>
     </form>

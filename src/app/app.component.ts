@@ -8,6 +8,7 @@ import {NgClass} from "@angular/common";
 import {NavBarComponent} from "./shared/components/nav-bar/nav-bar.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BrowserModule} from "@angular/platform-browser";
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Component({
@@ -27,6 +28,12 @@ export class AppComponent {
   title = 'upet-frontend-web';
 
   isSidebarCollapsed=false;
+
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'fr', 'es', 'ja']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
   onSidebarToggle(isCollapsed:boolean){
     this.isSidebarCollapsed = isCollapsed

@@ -19,6 +19,7 @@ import { TypeForm } from '../../interfaces/type-form.enum';
 import { PetService } from '../../../../../core/Pet/services/pet.service';
 import { PetSchemaRequest, PetSchemaResponse } from '../../../../../core/Pet/schema/pet.interface';
 import {AuthService} from "../../../../../core/auth/services/auth.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-form-add-pet',
@@ -36,6 +37,7 @@ import {AuthService} from "../../../../../core/auth/services/auth.service";
     ToastModule,
     FileUploadModule,
     NgIf,
+    TranslatePipe,
   ],
   templateUrl: './form-add-pet.component.html',
   styleUrls: ['./form-add-pet.component.css']
@@ -53,10 +55,7 @@ export class FormAddPetComponent {
 
   ngOnInit() {
     console.log({location:"Form edit pet",pet:this.pet});
-    this.genders = [
-      { name: 'Male', id: 1 },
-      { name: 'Female', id: 2 },
-    ];
+
     console.log({mode:this.mode, petEdit:this.pet});
     this.myForm = this.fb.group<PetResponse>({
       name: this.mode === TypeForm.ADD ? "" : this.pet?.name,
@@ -69,17 +68,24 @@ export class FormAddPetComponent {
     })
     this.imageUrl = this.pet?.image_url;
     this.buttonTitle = this.mode === TypeForm.ADD ? "Add" : "Edit";
+    this.genders = [
+      {name:"male", id: 1},
+      {name:"female", id: 2},
+    ]
+
+    this.translateService.onLangChange.subscribe(lang => {
+      this.initTranslations();
+    })
   }
+
   constructor(
     @Inject(FormBuilder) private fb: FormBuilder,
     private messageService: MessageService,
     private uploadService: UploadService,
     private petsApiService: PetService,
-    private authService:AuthService
+    private authService:AuthService,
+    private translateService:TranslateService
   ) {
-
-
-
     this.myForm = this.fb.group<PetResponse>({
       name: "",
       breed: "",
@@ -91,6 +97,8 @@ export class FormAddPetComponent {
     })
     this.imageUrl = this.pet?.image_url;
   }
+
+
   async onImageSelect(event:any) {
     const file = event.files[0]; // Obtener el primer archivo seleccionado
     console.log(file);
@@ -131,6 +139,13 @@ export class FormAddPetComponent {
   }
   getGenderByName(name:string):any{
     return this.genders.find((object)=>object.name === name);
+  }
+
+  initTranslations() {
+    this.buttonTitle = this.mode === TypeForm.ADD ?
+      this.translateService.instant("form_add_pet.btn_add") :
+      this.translateService.instant("form_add_pet.btn_edit")
+    ;
   }
 
 }

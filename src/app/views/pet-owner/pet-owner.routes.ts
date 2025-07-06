@@ -10,6 +10,7 @@ import {VetPublicProfileComponent} from "../../shared/views/vet-public-profile/v
 import {ProfilePetOwnerComponent} from "./profile-pet-owner/profile-pet-owner.component";
 import {AppointmentsViewComponent} from "../../shared/views/appointments-view/appointments-view.component";
 import {NotificationsViewComponent} from "../../shared/views/notifications-view/notifications-view.component";
+import {ClinicsFavoritesComponent} from "./clinics-favorites/clinics-favorites.component";
 
 export const PET_OWNER_ROUTES: Route[] = [
   {
@@ -28,6 +29,9 @@ export const PET_OWNER_ROUTES: Route[] = [
       },
       {
         path: 'clinics', component:ClinicsPetOwnerComponent
+      },
+      {
+        path: 'favorite-clinics', component: ClinicsFavoritesComponent
       },
       {
         path:'clinics/:id', component:ClinicProfileComponent

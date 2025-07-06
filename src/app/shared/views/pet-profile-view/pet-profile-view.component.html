@@ -10,15 +10,15 @@
     </div>
     <div *ngIf="userRole==UserType.Owner" class="flex">
       <div class="header-profile-button mr-3">
-        <button (click)="openDialogEdit()"><span class="pi pi-pencil"></span> Edit profile</button>
+        <button (click)="openDialogEdit()"><span class="pi pi-pencil"></span> {{"pet_profile.edit_profile" | translate}}</button>
       </div>
       @if(isTracked){
         <div class="header-profile-button mr-3 noTracked">
-          <button (click)="openDialogStopTracking()"><span class="pi pi-wifi"></span> Stop tracking</button>
+          <button (click)="openDialogStopTracking()"><span class="pi pi-wifi"></span> {{"pet_profile.stop_tracking" | translate}}</button>
         </div>
-      } @else {
+      }@else {
         <div class="header-profile-button mr-3 isTracked">
-          <button (click)="openDialogTracking()"><span class="pi pi-wifi"></span> Start tracking</button>
+          <button (click)="openDialogTracking()"><span class="pi pi-wifi"></span> {{"pet_profile.start_tracking" | translate}}</button>
         </div>
       }
     </div>
@@ -53,84 +53,84 @@
   </div>
   <div class="badges-container">
     <div class="badge">
-      <div>Breed</div>
+      <div>{{"pet_profile.breed" | translate}}</div>
       <div>{{ pet?.breed }}</div>
     </div>
     <div class="badge">
-      <div>Species</div>
+      <div>{{"pet_profile.species" | translate}}  </div>
       <div>{{ pet?.species }}</div>
     </div>
     <div class="badge">
-      <div>Weight</div>
+      <div>{{"pet_profile.weight" | translate}}</div>
       <div>{{ pet?.weight }}</div>
     </div>
     <div class="badge">
-      <div>Birthdate</div>
+      <div>{{"pet_profile.birthdate" | translate}}</div>
       <div>{{ pet?.birthdate }}</div>
     </div>
   </div>
   <div class="mt-4">
-    More Information
+    {{"pet_profile.more_info" | translate}}
   </div>
   <div *ngIf="historyId" class="my-accordion mt-5">
-    <div class="flex mb-3 gap-2 justify-content-between">Add commentMore actions
+    <div class="flex mb-3 gap-2 justify-content-between">
       <div class="flex gap-2">
         <p-button
           (click)="activeIndex = 0"
           rounded="true"
-          label="Medical results"
+          [label]="'pet_profile.medical_results' | translate"
           styleClass="w-5rem h-3rem p-0"
           [outlined]="activeIndex !== 0"/>
         <p-button
           (click)="activeIndex = 1"
           rounded="true"
-          label="Diseases"
+          [label]="'pet_profile.diseases' | translate"
           styleClass="w-5rem h-3rem p-0"
           [outlined]="activeIndex !== 1"/>
         <p-button
           (click)="activeIndex = 2"
           rounded="true"
-          label="Surgeries"
+          [label]="'pet_profile.surgeries' | translate"
           styleClass="w-5rem h-3rem p-0"
           [outlined]="activeIndex !== 2"/>
         <p-button
           (click)="activeIndex = 3"
           rounded="true"
-          label="Vaccines"
+          [label]="'pet_profile.vaccines' | translate"
           styleClass="w-5rem h-3rem p-0"
           [outlined]="activeIndex !== 3"/>
       </div>
 
       <!-- Botón de descarga PDF -->
       <p-button
-        (click)="downloadMedicalPDF()"Add commentMore actions
+        (click)="downloadMedicalPDF()"
         icon="pi pi-download"
-        label="Download Medical History"
+        [label]="'pet_profile.download_medical_history' | translate"
         styleClass="p-button-success"/>
     </div>
     <p-accordion (activeIndexChange)="activeIndexChange($event)" [activeIndex]="activeIndex">
-      <p-accordionTab header="Medical results">
+      <p-accordionTab [header]="'pet_profile.medical_results' | translate">
         <app-medical-results [medicalHistoryId]="historyId"></app-medical-results>
       </p-accordionTab>
-      <p-accordionTab header="Diseases">
+      <p-accordionTab [header]="'pet_profile.diseases' | translate">
         <app-diseases [medicalHistoryId]="historyId"></app-diseases>
       </p-accordionTab>
-      <p-accordionTab header="Surgeries">
+      <p-accordionTab [header]="'pet_profile.surgeries' | translate">
         <app-surgeries [medicalHistoryId]="historyId"></app-surgeries>
       </p-accordionTab>
-      <p-accordionTab header="Vaccines">
+      <p-accordionTab [header]="'pet_profile.vaccines' | translate">
         <app-vaccines [medicalHistoryId]="historyId"></app-vaccines>
       </p-accordionTab>
     </p-accordion>
   </div>
 
 </div>
-<p-dialog *ngIf="visible" header="Edit pet" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
+<p-dialog *ngIf="visible" [header]="'pet_profile.edit_pet' | translate" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
   <app-form-add-pet [pet]="pet" [closeDialog]="closeDialogEdit" [mode]="TypeForm.EDIT"></app-form-add-pet>
 </p-dialog>
 
 <p-dialog  header="Start tracking" [modal]="true" [(visible)]="dialogStartTrackVisible" [style]="{ width: '40rem' }">
-  <p>Do you want to start tracking your pet?</p>Add commentMore actions
+  <p>Do you want to start tracking your pet?</p>
   <form [formGroup]="productCodeForm">
     <div class="card flex justify-content-center mb-4">
       <p-floatLabel class="mt-4">

@@ -1,7 +1,7 @@
 <div class="w-full flex flex-row">
   <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
     <div class="flex flex-column gap-2">
-      <label for="name">Name</label>
+      <label for="name">{{"disease.name" | translate}}</label>
       <input
         formControlName="name"
         class="input"
@@ -10,7 +10,7 @@
         aria-describedby="username-help"/>
     </div>
       <div class="flex flex-column gap-2">
-        <label for="severity">Severity</label>
+        <label for="severity">{{"disease.severity" | translate}}</label>
         <input
           formControlName="severity"
           class="input"
@@ -19,7 +19,7 @@
           aria-describedby="username-help"/>
       </div>
       <div class="card flex flex-column gap-2 justify-content-center">
-        <label for="date" class=""> Result date </label>
+        <label for="date" class=""> {{"disease.result_date" | translate}} </label>
         <p-calendar
           class="input"
           formControlName="diagnosisDate"
@@ -29,18 +29,18 @@
           inputId="icondisplay"/>
       </div>
       <div class="card flex justify-content-center mt-4">
-        <p-button  label="Add disease" class="button-secondary" type="submit"/>
+        <p-button  [label]="'disease.btn_add' | translate" class="button-secondary" type="submit"/>
       </div>
     </form>
     <p-divider layout="vertical"/>
     <div class="w-full flex-column results-container" >
       <p *ngIf="diseases.length==0">
-        No diseases found
+        {{"disease.no_diseases" | translate}}
       </p>
       <div *ngFor="let result of diseases" class="medical-result mb-4">
-        <div>Name: {{ result.name }}</div>
-        <div>Severity: {{ result.severity }}</div>
-        <div>Diagnosis date: {{ result.diagnosisDate }}</div>
+        <div>{{"disease.name" | translate}}: {{ result.name }}</div>
+        <div>{{"disease.severity" | translate}}: {{ result.severity }}</div>
+        <div>{{"disease.result_date" | translate}}: {{ result.diagnosisDate }}</div>
         <hr/>
       </div>
     </div>

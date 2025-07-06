@@ -9,6 +9,7 @@ import {NgForOf} from "@angular/common";
 import {VeterinaryClinicService} from "../../../core/VeterinaryClinic/services/veterinary-clinic.service";
 import {VeterinaryClinicSchemaGet} from "../../../core/VeterinaryClinic/schema/veterinary-clinic.interface";
 import {SearchBarComponent} from "../../../shared/components/search-bar/search-bar.component";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-clinics-pet-owner',
@@ -19,7 +20,8 @@ import {SearchBarComponent} from "../../../shared/components/search-bar/search-b
     DialogModule,
     CustomMapComponent,
     NgForOf,
-    SearchBarComponent
+    SearchBarComponent,
+    TranslatePipe
   ],
   templateUrl: './clinics-pet-owner.component.html',
   styleUrl: './clinics-pet-owner.component.css'

@@ -5,6 +5,7 @@ import {FormAddPetComponent} from "../../../views/pet-owner/home-pet-owner/compo
 import {TypeForm} from "../../../views/pet-owner/home-pet-owner/interfaces/type-form.enum";
 import {Router} from "@angular/router";
 import { PetSchemaResponse } from '../../../core/Pet/schema/pet.interface';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-pet-card',
@@ -12,6 +13,7 @@ import { PetSchemaResponse } from '../../../core/Pet/schema/pet.interface';
   imports: [
     DialogModule,
     FormAddPetComponent,
+    TranslatePipe,
   ],
   templateUrl: './pet-card.component.html',
   styleUrls: ['./pet-card.component.css']  // Corregido aquí

@@ -7,15 +7,17 @@ import {NotificationCardComponent} from "./components/notification-card/notifica
 import {NgForOf, NgIf} from "@angular/common";
 import {formatDateToYYYYMMDDHHMM} from "../../helpers/date.formater";
 import {firstValueFrom} from "rxjs";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-notifications-view',
     standalone: true,
-    imports: [
-        NotificationCardComponent,
-        NgForOf,
-        NgIf
-    ],
+  imports: [
+    NotificationCardComponent,
+    NgForOf,
+    NgIf,
+    TranslatePipe
+  ],
     templateUrl: './notifications-view.component.html',
     styleUrl: './notifications-view.component.css'
 })

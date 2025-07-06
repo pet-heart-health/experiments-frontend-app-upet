@@ -1,11 +1,14 @@
 import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
 import {VetClinicResponse} from "../../../core/networking/response/VetClinicResponse";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-clinic-card',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './clinic-card.component.html',
   styleUrl: './clinic-card.component.css'
 })

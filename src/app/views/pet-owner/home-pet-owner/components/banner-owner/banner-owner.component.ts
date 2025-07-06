@@ -3,11 +3,14 @@ import {DecodedToken} from "../../../../../core/auth/schema/decoded-token.interf
 import {AuthService} from "../../../../../core/auth/services/auth.service";
 import {PetOwnerService} from "../../../../../core/PetOwner/services/pet-owner.service";
 import {PetOwnerSchemaGet} from "../../../../../core/PetOwner/schema/petowner.interface";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-banner-owner',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './banner-owner.component.html',
   styleUrl: './banner-owner.component.css'
 })

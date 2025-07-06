@@ -12,6 +12,7 @@ import { formatDateToYYYYMMDD } from '../../../../helpers/date.formater';
 import { DiseaseSchemaRequest, DiseaseSchemaResponse } from '../../../../../core/MedicalHistory/schema/disease.interface';
 import { MedicalHistoryBaseService } from '../../../../../core/MedicalHistory/services/shared/medical-history-base.service';
 import { DiseasesService } from '../../../../../core/MedicalHistory/services/Disease/disease.service';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-diseases',
@@ -25,7 +26,8 @@ import { DiseasesService } from '../../../../../core/MedicalHistory/services/Dis
     InputTextareaModule,
     NgForOf,
     PaginatorModule,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './diseases.component.html',
   styleUrls: ['./diseases.component.css']

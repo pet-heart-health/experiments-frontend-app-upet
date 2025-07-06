@@ -1,7 +1,7 @@
 <div class="w-full flex flex-row">
   <form class="form-medical-result" [formGroup]="myForm" (submit)="submit()">
     <div class="card flex flex-column gap-2 justify-content-center">
-      <label for="description">Description</label>
+      <label for="description">{{"surgery.description" | translate}}</label>
       <textarea
         formControlName="description"
         class="input"
@@ -13,7 +13,7 @@
     </textarea>
     </div>
     <div class="card flex flex-column gap-2 justify-content-center">
-      <label for="date" class=""> Surgery date </label>
+      <label for="date" class=""> {{"surgery.surgery_date" | translate}} </label>
       <p-calendar
         id="date"
         formControlName="surgeryDate"
@@ -22,17 +22,17 @@
         inputId="icondisplay" />
     </div>
     <div class="card flex justify-content-center">
-      <p-button label="Add Surgery" class="button-secondary mt-4" type="submit"/>
+      <p-button [label]="'surgery.btn_add' | translate" class="button-secondary mt-4" type="submit"/>
     </div>
   </form>
   <p-divider layout="vertical" />
   <div class="w-full flex-column results-container">
     <p *ngIf="surgeries.length==0">
-      No surgeries registered
+      {{"surgery.no_surgeries" | translate}}
     </p>
     <div *ngFor="let result of surgeries" class="medical-result mb-4">
-      <div>Description: {{result.description}}</div>
-      <div>Surgery date: {{result.surgeryDate}}</div>
+      <div>{{"surgery.description" | translate}}: {{result.description}}</div>
+      <div>{{"surgery.surgery_date" | translate}}: {{result.surgeryDate}}</div>
       <hr/>
     </div>
   </div>

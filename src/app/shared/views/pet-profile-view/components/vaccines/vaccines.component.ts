@@ -11,6 +11,7 @@ import {formatDateToYYYYMMDD} from "../../../../helpers/date.formater";
 import { VaccineSchemaRequest, VaccineSchemaResponse } from '../../../../../core/MedicalHistory/schema/vaccine.interface';
 import { MedicalHistoryBaseService } from '../../../../../core/MedicalHistory/services/shared/medical-history-base.service';
 import { VaccineService } from '../../../../../core/MedicalHistory/services/Vaccines/vaccine.service';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-vaccines',
@@ -25,7 +26,8 @@ import { VaccineService } from '../../../../../core/MedicalHistory/services/Vacc
     NgForOf,
     PaginatorModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './vaccines.component.html',
   styleUrl: './vaccines.component.css'

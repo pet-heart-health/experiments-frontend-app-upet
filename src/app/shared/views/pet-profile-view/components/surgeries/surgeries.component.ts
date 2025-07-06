@@ -11,6 +11,7 @@ import {formatDateToYYYYMMDD} from "../../../../helpers/date.formater";
 import { SurgerySchemaRequest, SurgerySchemaResponse } from '../../../../../core/MedicalHistory/schema/surgery.interface';
 import { MedicalHistoryBaseService } from '../../../../../core/MedicalHistory/services/shared/medical-history-base.service';
 import { SurgerieService } from '../../../../../core/MedicalHistory/services/Surgeries/surgerie.service';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-surgeries',
@@ -25,7 +26,8 @@ import { SurgerieService } from '../../../../../core/MedicalHistory/services/Sur
     NgForOf,
     PaginatorModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './surgeries.component.html',
   styleUrl: './surgeries.component.css'

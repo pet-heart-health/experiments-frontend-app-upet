@@ -3,6 +3,7 @@ import {GoogleMap, MapAdvancedMarker, MapInfoWindow, MapMarker} from "@angular/g
 import {MapMarkerCustom} from "./interfaces/MapMarkerCustom";
 import {NgForOf} from "@angular/common";
 import {Button} from "primeng/button";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-custom-map',
@@ -11,7 +12,8 @@ import {Button} from "primeng/button";
     GoogleMap,
     MapMarker,
     NgForOf,
-    Button
+    Button,
+    TranslatePipe
   ],
   templateUrl: './custom-map.component.html',
   styleUrl: './custom-map.component.css'

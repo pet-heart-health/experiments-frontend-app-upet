@@ -21,6 +21,7 @@ import {
 } from "../../../core/Veterinarian/schema/veterinarian.interface";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {VeterinaryClinicService} from "../../../core/VeterinaryClinic/services/veterinary-clinic.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-profile-vet',
@@ -35,7 +36,8 @@ import {VeterinaryClinicService} from "../../../core/VeterinaryClinic/services/v
     NgIf,
     ReactiveFormsModule,
     ToastModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TranslatePipe
   ],
   templateUrl: './profile-vet.component.html',
   styleUrl: './profile-vet.component.css'

@@ -11,13 +11,15 @@ import {NgForOf} from "@angular/common";
 import {
   AppointmentCardComponent
 } from "../../../shared/views/appointments-view/components/appointment-card/appointment-card.component";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-home-vet',
   standalone: true,
   imports: [
     AppointmentCardComponent,
-    NgForOf
+    NgForOf,
+    TranslatePipe
   ],
   templateUrl: './home-vet.component.html',
   styleUrl: './home-vet.component.css'

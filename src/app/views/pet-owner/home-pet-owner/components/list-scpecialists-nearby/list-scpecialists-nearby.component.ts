@@ -10,6 +10,7 @@ import {ClinicCardComponent} from "../../../../../shared/components/clinic-card/
 import {Router} from "@angular/router";
 import {VeterinaryClinicService} from "../../../../../core/VeterinaryClinic/services/veterinary-clinic.service";
 import {VetClinicResponse} from "../../../../../core/networking/response/VetClinicResponse";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-list-scpecialists-nearby',
@@ -20,7 +21,8 @@ import {VetClinicResponse} from "../../../../../core/networking/response/VetClin
     NgForOf,
     PetCardComponent,
     VetCardComponent,
-    ClinicCardComponent
+    ClinicCardComponent,
+    TranslatePipe
   ],
   templateUrl: './list-scpecialists-nearby.component.html',
   styleUrl: './list-scpecialists-nearby.component.css'

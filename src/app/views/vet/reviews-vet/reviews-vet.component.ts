@@ -7,6 +7,7 @@ import { AuthService } from '../../../core/auth/services/auth.service';
 import { VeterinarianService } from '../../../core/Veterinarian/services/veterinarian.service';
 import { VeterinarianSchemaResponse } from '../../../core/Veterinarian/schema/veterinarian.interface';
 import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-reviews-vet',
@@ -14,7 +15,8 @@ import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
   imports: [
     ReviewCardComponent,
     NgForOf,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './reviews-vet.component.html',
   styleUrl: './reviews-vet.component.css'

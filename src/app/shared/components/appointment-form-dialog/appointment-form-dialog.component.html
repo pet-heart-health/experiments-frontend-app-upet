@@ -1,6 +1,6 @@
 <form [formGroup]="myForm">
   <div class="card flex flex-column justify-content-center mb-4">
-    <label>Select date </label>
+    <label> {{"appointment_form.date" | translate}} </label>
     <div class="card flex justify-content-center">
       <p-calendar
         class="max-w-full"
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="card flex flex-column justify-content-center w-full">
-    <label>Select time</label>
+    <label>{{"appointment_form.hour" | translate}}</label>
     <p-dropdown
       [options]="availableTimes"
       formControlName="start_time"
@@ -21,17 +21,17 @@
       placeholder="select an available time"/>
   </div>
   <div class="card flex flex-column justify-content-start">
-    <label>Select your pet</label>
+    <label>{{"appointment_form.pet" | translate}}</label>
     <p-dropdown
       [options]="pets"
       formControlName="pet"
       [checkmark]="true"
       optionLabel="name"
       [showClear]="true"
-      placeholder="Select your pet"/>
+      [placeholder]="'appointment_form.select_pet_placeholder' | translate"/>
   </div>
   <div class="card flex flex-column justify-content-start w-full">
-    <label for="float-input">Pet´s problem</label>
+    <label for="float-input">{{"appointment_form.problem" | translate}}</label>
     <textarea
       id="float-input"
       rows="7"
@@ -45,7 +45,7 @@
   </div>
 
   <div class="flex justify-content-around gap-2 mb-4 mt-3">
-    <p-button label="Cancel" severity="secondary" (onClick)="onClose()"/>
-    <p-button label="Save" (onClick)="submitAppointment()"/>
+    <p-button [label]="'appointment_form.btn_cancel' | translate" severity="secondary" (onClick)="onClose()"/>
+    <p-button [label]="'appointment_form.btn_save' | translate" (onClick)="submitAppointment()"/>
   </div>
 </form>

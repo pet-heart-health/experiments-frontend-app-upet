@@ -1,4 +1,4 @@
 <div class="search-bar mb-3 flex justify-content-start">
-  <input #searchInput type="text" placeholder="Search" (input)="search(searchInput.value)">
-  <button (click)="search('')">Clear</button>
+  <input #searchInput type="text" [placeholder]="'search_bar.placeholder' | translate" (input)="search(searchInput.value)">
+  <button (click)="search('')">{{"search_bar.btn_clear" | translate}}</button>
 </div>

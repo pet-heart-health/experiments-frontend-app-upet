@@ -27,6 +27,7 @@ import {firstValueFrom} from "rxjs";
 import {UserType} from "../../../core/auth/enum/UserType.enum";
 import {CustomMapComponent} from "../../components/custom-map/custom-map.component";
 import {MapMarkerCustom} from "../../components/custom-map/interfaces/MapMarkerCustom";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-pet-profile-view',
@@ -47,7 +48,8 @@ import {MapMarkerCustom} from "../../components/custom-map/interfaces/MapMarkerC
     PaginatorModule,
     ReactiveFormsModule,
     FormsModule,
-    CustomMapComponent
+    CustomMapComponent,
+    TranslatePipe
   ],
   templateUrl: './pet-profile-view.component.html',
   styleUrl: './pet-profile-view.component.css'

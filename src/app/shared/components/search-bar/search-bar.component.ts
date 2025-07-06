@@ -1,9 +1,12 @@
 import {Component, Input} from '@angular/core';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.css'
 })

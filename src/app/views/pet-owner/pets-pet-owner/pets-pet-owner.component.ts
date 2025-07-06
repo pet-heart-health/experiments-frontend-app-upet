@@ -11,6 +11,7 @@ import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
 import {AuthService} from "../../../core/auth/services/auth.service";
 import {SearchBarComponent} from "../../../shared/components/search-bar/search-bar.component";
 import {PetService} from "../../../core/Pet/services/pet.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-pets-pet-owner',
@@ -21,7 +22,8 @@ import {PetService} from "../../../core/Pet/services/pet.service";
     PetCardComponent,
     DialogModule,
     FormAddPetComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TranslatePipe
   ],
   templateUrl: './pets-pet-owner.component.html',
   styleUrl: './pets-pet-owner.component.css'

@@ -7,6 +7,7 @@ import {TabMenuModule} from "primeng/tabmenu";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {AppointmentCardComponent} from "./components/appointment-card/appointment-card.component";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-appointments-view',
@@ -15,7 +16,8 @@ import {AppointmentCardComponent} from "./components/appointment-card/appointmen
     TabMenuModule,
     CommonModule,
     FormsModule,
-    AppointmentCardComponent
+    AppointmentCardComponent,
+    TranslatePipe
   ],
   templateUrl: './appointments-view.component.html',
   styleUrl: './appointments-view.component.css'

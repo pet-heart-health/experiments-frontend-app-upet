@@ -16,6 +16,7 @@ import {AppointmentSchemaCreate} from "../../../core/Appointment/schema/appointm
 import {AppointmentService} from "../../../core/Appointment/services/appointment.service";
 import {DecodedToken} from "../../../core/auth/schema/decoded-token.interface";
 import {AuthService} from "../../../core/auth/services/auth.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-appointment-form-dialog',
@@ -29,7 +30,8 @@ import {AuthService} from "../../../core/auth/services/auth.service";
     ReactiveFormsModule,
     CalendarModule,
     DropdownModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TranslatePipe
   ],
   templateUrl: './appointment-form-dialog.component.html',
   styleUrl: './appointment-form-dialog.component.css'

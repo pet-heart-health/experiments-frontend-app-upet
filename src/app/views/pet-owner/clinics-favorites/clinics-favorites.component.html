@@ -1,0 +1,20 @@
+<div class="w-full flex flex-column align-items-center justify-content-center">
+  <div class="flex w-full flex-column justify-content-evenly">
+    <div class="title-section">
+      {{"favorite_clinics.title" | translate}}
+    </div>
+  </div>
+  <app-search-bar [callback]="filterClinics" class="w-9"></app-search-bar>
+
+  <div class="container-clinics mt-3">
+    <app-clinic-card *ngFor="let clinic of clinics" [clinic]="clinic" ></app-clinic-card>
+    <div *ngIf="clinics.length == 0">
+      <div class="text-center mt-4">
+        {{"favorite_clinics.no_favorites" | translate}}
+      </div>
+    </div>
+  </div>
+</div>
+<p-dialog header="Map" [modal]="true" [(visible)]="visibleMapDialog" [style]="{ width: '40rem' }">
+  <app-custom-map [closeDialog]="closeMapDialog" [markers]="markers"></app-custom-map>
+</p-dialog>

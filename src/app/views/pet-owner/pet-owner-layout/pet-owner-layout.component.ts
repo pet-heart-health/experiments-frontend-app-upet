@@ -38,6 +38,7 @@ export class PetOwnerLayoutComponent {
         { label: this.translateService.instant('pet_owner_sidebar.home'), icon: 'pi pi-home', link: '/pet-owner/home' },
         { label: this.translateService.instant('pet_owner_sidebar.my_pets'), icon: 'pi pi-wifi', link: '/pet-owner/pets' },
         {label: this.translateService.instant('pet_owner_sidebar.clinics'), icon:'pi pi-building', link: '/pet-owner/clinics'},
+        {label: this.translateService.instant('pet_owner_sidebar.favorite_clinics'), icon: 'pi pi-heart', link: '/pet-owner/favorite-clinics' },
         { label: this.translateService.instant('pet_owner_sidebar.appointments'), icon: 'pi pi-book', link: '/pet-owner/appointments' },
         { label: this.translateService.instant('pet_owner_sidebar.notifications'), icon: 'pi pi-bell', link: '/pet-owner/notifications' },
         { label: this.translateService.instant('pet_owner_sidebar.profile'), icon: 'pi pi-user', link: '/pet-owner/profile' },

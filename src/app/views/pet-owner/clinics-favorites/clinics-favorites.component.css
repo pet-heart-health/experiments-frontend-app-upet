@@ -1,0 +1,18 @@
+.container-clinics{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items:center;
+  align-items:center;
+  gap:5px;
+}
+
+.map-btn{
+  background-color:var(--color-button-secondary);
+  color:var(--color-white);
+  padding:10px;
+  border-radius:5px;
+}
+.map-btn:hover{
+  background-color:var(--color-button-secondary-hover);
+}

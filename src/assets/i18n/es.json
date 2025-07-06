@@ -89,6 +89,7 @@
     "profile": "Perfil",
     "appointments": "Citas",
     "notifications": "Notificaciones",
+    "favorite_clinics": "Clínicas favoritas",
     "logout": "Cerrar sesión"
   },
   "home_vet": {
@@ -125,7 +126,10 @@
   "clinic_profile": {
     "general_info": "Información General",
     "about_us": "Sobre nosotros",
-    "our_specialists": "Nuestros especialistas"
+    "our_specialists": "Nuestros especialistas",
+    "add_favorite": "Añadir a favoritos",
+    "no_favorite_tooltip": "Añadir a favoritos",
+    "favorite_tooltip": "Eliminar de favoritos"
   },
   "notifications": {
     "title": "Notificaciones",
@@ -179,6 +183,10 @@
     "result_date": "Fecha del resultado",
     "btn_add": "Añadir vacuna",
     "no_vaccines": "No hay vacunas registradas"
-  }
+  },
 
+  "favorite_clinics": {
+    "title": "Clínicas favoritas",
+    "no_favorites": "No hay clínicas favoritas"
+  }
 }

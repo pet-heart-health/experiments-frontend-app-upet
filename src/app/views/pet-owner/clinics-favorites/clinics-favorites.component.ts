@@ -36,23 +36,15 @@ export class ClinicsFavoritesComponent {
   markers: MapMarkerCustom[] = [];
   constructor(private clinicsApiService: VeterinaryClinicService,
               private favoriteClinics:FavoriteClinicsService,
-              private authService:AuthService
+              private authService:AuthService,
               ) {
 
   }
 
   ngOnInit() {
     let userId = this.authService.decodeToken()?.user_id;
-    this.clinicsApiService.getVeterinaryClinics().subscribe((clinics: VeterinaryClinicSchemaGet[]) => {
-      this.clinics = clinics;
-      this.clinics = this.clinics.filter((clinic) => {
-        return this.favoriteClinics.isClinicFavorite(userId!,clinic.id);
-      });
-      this.clinicsAux = clinics;
-      this.markers = clinics.map((clinic: VeterinaryClinicSchemaGet): MapMarkerCustom =>
-        this.parseClinicToMarker(clinic));
-      console.log("markers", this.markers);
-    });
+    this.fetchFavoriteClinics(userId!);
+
   }
 
   parseClinicToMarker(clinic: VetClinicResponse): MapMarkerCustom {
@@ -73,6 +65,20 @@ export class ClinicsFavoritesComponent {
 
   openMapDialog() {
     this.visibleMapDialog = true;
+  }
+  fetchFavoriteClinics(userId:number) {
+    this.favoriteClinics.getFavoriteClinics(userId).subscribe({
+        next: (clinics: VeterinaryClinicSchemaGet[]) => {
+          this.clinics = clinics;
+          this.clinicsAux = clinics;
+          this.markers = clinics.map((clinic: VeterinaryClinicSchemaGet): MapMarkerCustom =>
+            this.parseClinicToMarker(clinic));
+        },
+        error: (error) => {
+          console.error('Error fetching favorite clinics:', error);
+        }
+      }
+    )
   }
 
   filterClinics = (keY: string) => {

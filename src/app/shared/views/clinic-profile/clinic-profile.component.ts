@@ -30,6 +30,8 @@ export class ClinicProfileComponent {
   clinic: VeterinaryClinicSchemaGet = {} as VeterinaryClinicSchemaGet;
   vets: VeterinarianSchemaResponse[] = [];
   tooltipText: string = '';
+  isFavoriteClinic: boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private veterinayClinicService: VeterinaryClinicService,
@@ -39,13 +41,15 @@ export class ClinicProfileComponent {
     private translateService: TranslateService,
     private activateRoute: ActivatedRoute
   ) {
-
   }
 
   ngOnInit() {
     let clinicId = this.activateRoute.snapshot.params['id'];
+
     this.veterinayClinicService.getVeterinaryClinicById(clinicId).subscribe(clinic => {
       this.clinic = clinic;
+      this.updateFavorite();
+
     });
     this.veterinarianService.getVetsByClinicId(clinicId).subscribe(vets => {
       this.vets = vets;
@@ -54,31 +58,45 @@ export class ClinicProfileComponent {
     this.translateService.onLangChange.subscribe(lang => {
       this.updateTooltip();
     });
+
   }
 
 
   toggleFavorite() {
     const userId = this.authService.decodeToken()?.user_id;
     if (userId) {
-      const isFavorite = this.favoriteClinicsService.isClinicFavorite(userId, this.clinic.id);
-      if (isFavorite) {
-        this.favoriteClinicsService.removeClinicFromFavorites(userId, this.clinic.id);
-      } else {
-        this.favoriteClinicsService.addClinicToFavorites(userId, this.clinic.id);
-      }
+      this.isLoading = true;
+      this.favoriteClinicsService.toggle(userId, this.clinic.id).subscribe(
+        {
+          next:()=>{
+            this.updateFavorite();
+          },
+          complete:()=> {
+            this.isLoading = false;
+          }
+        }
+      );
     }
   }
 
-  isFavorite() {
+  updateFavorite() {
     const userId = this.authService.decodeToken()?.user_id;
     if (userId) {
-      return this.favoriteClinicsService.isClinicFavorite(userId, this.clinic.id);
+      this.favoriteClinicsService.isClinicFavorite(userId, this.clinic.id).subscribe({
+        next: (isFavorite) => {
+          this.isFavoriteClinic = isFavorite;
+          this.updateTooltip();
+        },
+        error: (error) => {
+          console.error('Error checking favorite clinic:', error);
+        }
+      });
     }
     return false;
   }
 
   updateTooltip() {
-    this.tooltipText = this.isFavorite()
+    this.tooltipText = this.isFavoriteClinic
       ? this.translateService.instant('clinic_profile.no_favorite_tooltip')
       : this.translateService.instant('clinic_profile.favorite_tooltip');
   }

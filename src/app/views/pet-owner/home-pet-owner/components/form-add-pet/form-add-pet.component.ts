@@ -69,8 +69,8 @@ export class FormAddPetComponent {
     this.imageUrl = this.pet?.image_url;
     this.buttonTitle = this.mode === TypeForm.ADD ? "Add" : "Edit";
     this.genders = [
-      {name:"male", id: 1},
-      {name:"female", id: 2},
+      {name:"Male", id: 1},
+      {name:"Female", id: 2},
     ]
 
     this.translateService.onLangChange.subscribe(lang => {

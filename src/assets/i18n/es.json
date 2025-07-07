@@ -188,5 +188,16 @@
   "favorite_clinics": {
     "title": "Clínicas favoritas",
     "no_favorites": "No hay clínicas favoritas"
+  },
+
+  "add_reminder": {
+    "btn_float": "+ Añadir recordatorio",
+    "title_form": "Añadir recordatorio",
+    "title": "Título:",
+    "description": "Descripción:",
+    "date": "Fecha:",
+    "time": "Hora:",
+    "btn_save": "Guardar",
+    "btn_cancel": "Cancelar"
   }
 }

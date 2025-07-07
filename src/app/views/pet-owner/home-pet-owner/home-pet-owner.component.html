@@ -2,4 +2,36 @@
       <app-banner-owner></app-banner-owner>
       <app-list-owner-pets></app-list-owner-pets>
       <app-list-scpecialists-nearby></app-list-scpecialists-nearby>
+      <div class="btn-reminder">
+          <p-button
+            class="px-5"
+            (click)="showDialog()"
+            [label]="'add_reminder.btn_float' | translate"
+            [style]="{'width': '250px', 'height': '50px', 'background-color': '#4CAF50', 'color': 'white'}"
+          >
+          </p-button>
+      </div>
+
+      <p-dialog [visible]="dialogVisible" [closable]="true" [draggable]="false">
+        <ng-template pTemplate="header">
+          <h2 class="text-center">{{"add_reminder.title_form" | translate}}</h2>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <form [formGroup]="reminderForm" class="form-reminder flex flex-col gap-4" (ngSubmit)="saveReminder()">
+            <label for="reminderTitle">{{"add_reminder.title" | translate}}</label>
+            <input id="reminderTitle" formControlName="title" type="text" class="p-inputtext p-component" placeholder="Ingrese el título del recordatorio" />
+            <label for="reminderDescription">{{"add_reminder.description" | translate}}</label>
+            <textarea id="reminderDescription" formControlName="description" class="p-inputtext p-component" placeholder="Ingrese la descripción del recordatorio"></textarea>
+            <label for="reminderDate">{{"add_reminder.date" | translate}}</label>
+            <input id="reminderDate" formControlName="date" type="date" class="p-inputtext p-component" />
+            <label for="reminderTime">{{"add_reminder.time" | translate}}</label>
+            <input id="reminderTime" formControlName="time" type="time" class="p-inputtext p-component" />
+            <div class="footer-form">
+              <p-button [label]="'add_reminder.btn_cancel' | translate"  icon="pi pi-times" (click)="hideDialog()"></p-button>
+              <p-button [disabled]="reminderForm.invalid" [label]="'add_reminder.btn_save' | translate"  [icon]="isLoading? 'pi pi-spinner pi-spin':'pi pi-check'" type="submit"></p-button>
+            </div>
+          </form>
+        </ng-template>
+
+      </p-dialog>
 </div>

@@ -10,6 +10,7 @@ export interface NotificationSchemaPost {
 export interface NotificationSchemaGet {
   id: number;
   type: string;
+  title:string;
   message: string;
   datetime: string; // Cambiar a Date si prefieres trabajar con objetos Date
 }

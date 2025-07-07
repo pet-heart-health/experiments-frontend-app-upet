@@ -13,4 +13,11 @@
 .title-section{
   text-align:start;
 }
-
+.btn-reminder{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.form-reminder{
+   width: 600px;
+}

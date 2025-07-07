@@ -5,18 +5,18 @@
     "tip": "Make sure to take your pet to the vet at least once a year."
   },
   "list_owner_pets": {
-    "title": "My pets",
+    "title": "My Pets",
     "btn_add_pet": "Add pet",
     "btn_all_pets": "See all"
   },
   "list_specialists_nearby": {
-    "title": "Nearby specialists",
+    "title": "Nearby Specialists",
     "btn_see_all": "See all"
   },
   "form_add_pet": {
     "upload_image": "Upload image",
     "title": "Add pet",
-    "name": "Pet's name",
+    "name": "Pet name",
     "species": "Species",
     "breed": "Breed",
     "age": "Age",
@@ -29,11 +29,11 @@
     "btn_edit": "Edit"
   },
   "pets": {
-    "title": "My pets",
+    "title": "My Pets",
     "btn_add_pet": "Add pet"
   },
   "clinics": {
-    "title": "Nearby clinics",
+    "title": "Nearby Clinics",
     "see_map": "See map"
   },
   "profile": {
@@ -76,7 +76,7 @@
     "hour": "Select time",
     "pet": "Select pet",
     "select_pet_placeholder": "Select your pet",
-    "problem": "Pet's problem",
+    "problem": "Pet problem",
     "btn_cancel": "Cancel",
     "btn_save": "Save"
   },
@@ -87,7 +87,8 @@
     "profile": "Profile",
     "appointments": "Appointments",
     "notifications": "Notifications",
-    "logout": "Log out"
+    "favorite_clinics": "Favorite clinics",
+    "logout": "Logout"
   },
   "home_vet": {
     "title": "Welcome, {{name}}!",
@@ -123,7 +124,10 @@
   "clinic_profile": {
     "general_info": "General Information",
     "about_us": "About us",
-    "our_specialists": "Our specialists"
+    "our_specialists": "Our specialists",
+    "add_favorite": "Add to favorites",
+    "no_favorite_tooltip": "Add to favorites",
+    "favorite_tooltip": "Remove from favorites"
   },
   "notifications": {
     "title": "Notifications",
@@ -150,19 +154,19 @@
     "severity": "Severity",
     "result_date": "Result date",
     "btn_add": "Add disease",
-    "no_diseases": "No diseases recorded"
+    "no_diseases": "No diseases registered"
   },
   "medical_result": {
     "result_type": "Result type",
     "description": "Description",
     "result_date": "Result date",
-    "no_results": "No medical results recorded",
+    "no_results": "No medical results registered",
     "btn_add": "Add result"
   },
   "surgery": {
     "description": "Description",
     "surgery_date": "Surgery date",
-    "no_surgeries": "No surgeries recorded",
+    "no_surgeries": "No surgeries registered",
     "btn_add": "Add surgery"
   },
   "vaccine": {
@@ -172,6 +176,20 @@
     "location": "Location",
     "result_date": "Result date",
     "btn_add": "Add vaccine",
-    "no_vaccines": "No vaccines recorded"
+    "no_vaccines": "No vaccines registered"
+  },
+  "favorite_clinics": {
+    "title": "Favorite clinics",
+    "no_favorites": "No favorite clinics"
+  },
+  "add_reminder": {
+    "btn_float": "+ Add reminder",
+    "title_form": "Add reminder",
+    "title": "Title:",
+    "description": "Description:",
+    "date": "Date:",
+    "time": "Time:",
+    "btn_save": "Save",
+    "btn_cancel": "Cancel"
   }
 }

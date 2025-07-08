@@ -11,6 +11,8 @@ import {Router} from "@angular/router";
 import {VeterinaryClinicService} from "../../../../../core/VeterinaryClinic/services/veterinary-clinic.service";
 import {VetClinicResponse} from "../../../../../core/networking/response/VetClinicResponse";
 import {TranslatePipe} from "@ngx-translate/core";
+import {FavoriteClinicsService} from "../../../../../core/favoriteClinics/favorite-clinics.service";
+import {AuthService} from "../../../../../core/auth/services/auth.service";
 
 @Component({
   selector: 'app-list-scpecialists-nearby',
@@ -31,19 +33,20 @@ export class ListScpecialistsNearbyComponent {
   clinics : VetClinicResponse[] = [];
 
   constructor(
-    private clinicService: VeterinaryClinicService,
+    private favoriteClinics:FavoriteClinicsService,
+    private authService:AuthService,
     private router:Router
 
   ) {
-
-    this.clinicService = clinicService;
-    clinicService.getVeterinaryClinics().subscribe((data: VetClinicResponse[]) => {
+    let userId = this.authService.decodeToken()?.user_id;
+    this.favoriteClinics = favoriteClinics;
+    favoriteClinics.getFavoriteClinics(userId!).subscribe((data: VetClinicResponse[]) => {
       this.clinics = data;
     });
   }
 
   redirectToAllClinics() {
-    this.router.navigate(['/pet-owner/clinics']).then(r=>r);
+    this.router.navigate(['/pet-owner/favorite-clinics']).then(r=>r);
   }
 
 }

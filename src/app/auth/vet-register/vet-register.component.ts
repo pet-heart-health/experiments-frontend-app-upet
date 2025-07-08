@@ -9,11 +9,12 @@ import { VeterinarianSchemaRequest, VeterinarianSchemaResponse } from '../../cor
 import { LoginResponse } from '../../core/shared/login-response.interface';
 import { navigateTo } from '../shared/auth.utils';
 import { VeterinaryClinicSchemaGet, VeterinaryClinicSchemaPost } from '../../core/VeterinaryClinic/schema/veterinary-clinic.interface';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-vet-register',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,TranslatePipe],
   templateUrl: './vet-register.component.html',
   styleUrl: './vet-register.component.css'
 })

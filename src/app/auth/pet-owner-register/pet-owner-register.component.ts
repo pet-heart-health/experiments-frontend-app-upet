@@ -6,13 +6,15 @@ import { PetOwnerService } from '../../core/PetOwner/services/pet-owner.service'
 import { PetOwnerSchemaPost } from '../../core/PetOwner/schema/petowner.interface';
 import { AuthService } from '../../core/auth/services/auth.service';
 import { Router } from '@angular/router';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-pet-owner-register',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslatePipe,
   ],
   templateUrl: './pet-owner-register.component.html',
   styleUrls: ['./pet-owner-register.component.css']

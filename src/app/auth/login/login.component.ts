@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { LoginResponse } from "../../core/shared/login-response.interface";
 
 import { navigateTo } from '../shared/auth.utils';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, CommonModule,TranslatePipe,],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'] // Corrige 'styleUrl' a 'styleUrls'
 })
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
   generateCaptcha() {
     const num1 = Math.floor(Math.random() * 10);
     const num2 = Math.floor(Math.random() * 10);
-    this.captchaQuestion = `¿Cuánto es ${num1} + ${num2}?`;
+    this.captchaQuestion = `${num1} + ${num2} = ?`;
     this.expectedAnswer = num1 + num2;
     this.captchaAnswer = '';
     //this.captchaError = null;

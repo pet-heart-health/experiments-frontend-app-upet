@@ -5,11 +5,12 @@ import {AuthService} from '../../core/auth/services/auth.service';
 import {RegisterRequest} from "../../core/auth/schema/register.interface";
 import {UserType} from "../../core/auth/enum/UserType.enum";
 import {navigateTo} from "../shared/auth.utils";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule,TranslatePipe],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

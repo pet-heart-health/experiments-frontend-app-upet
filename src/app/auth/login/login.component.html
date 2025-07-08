@@ -2,11 +2,9 @@
     <div class="flex flex-col w-full h-full px-4 align-middle items-center">
 
         <div class="mt-4 w-full">
-            <h1 class="text-4xl md:text-5xl font-bold text-center items-center">Welcome</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-center items-center">{{"auth.welcome"|translate}}</h1>
             <h2 class="text-xl md:text-2xl font-medium text-center mt-2 mb-4">
-                You are one step away from becoming
-                <br>
-                a member of Upet
+              {{"auth.step"|translate}}
             </h2>
 
             <div class="px-20">
@@ -18,7 +16,7 @@
 
                 <!-- Password Input -->
                 <div class="flex flex-col mb-4 px-10">
-                    <label for="password" class="text-lg mb-2">Password</label>
+                    <label for="password" class="text-lg mb-2">{{"auth.pass"|translate}}</label>
                     <input type="password" id="password" [(ngModel)]="password"
                     class="text-lg w-full h-14 px-4 border border-black text-xl" />
                 </div>
@@ -30,7 +28,7 @@
 
             <!-- Forgot Password Link -->
             <div class="text-center mb-4">
-                <a href="#" class="text-lg text-purple-500 hover:underline">Forgot Password?</a>
+                <a href="#" class="text-lg text-purple-500 hover:underline">{{"auth.forgot"|translate}}</a>
             </div>
 
             <!-- Divider -->
@@ -38,8 +36,8 @@
 
             <!-- Register Link -->
             <div class="text-center mt-4">
-                <p class="text-lg">Don't have an account?
-                    <a routerLink="/auth/register" class="text-purple-500 hover:underline">Create Account</a>
+                <p class="text-lg">{{"auth.not"|translate}}
+                    <a routerLink="/auth/register" class="text-purple-500 hover:underline">{{"auth.create"|translate}}</a>
                 </p>
             </div>
 
@@ -55,7 +53,7 @@
               [(ngModel)]="captchaAnswer"
               required
               class="form-control"
-              placeholder="Escribe tu respuesta">
+              placeholder="'auth.answer'|translate">
 
             <div *ngIf="captchaError" class="error-text">
               Error {{ captchaError }}
@@ -66,7 +64,7 @@
           <!-- Sign In Button -->
             <div class="py-6 flex justify-center">
                 <button (click)="login()" class="text-white bg-purple-500 hover:bg-purple-600 border-0 rounded-full px-10 py-5 shadow-lg">
-                    Sign In
+                  {{"auth.sign_in"|translate}}
                 </button>
             </div>
         </div>

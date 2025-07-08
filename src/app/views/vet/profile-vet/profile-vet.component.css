@@ -34,6 +34,7 @@
   font-size:1.2rem;
   font-weight:bolder;
   margin-bottom:10px;
+  color: var(--text-primary);
 }
 .btn-container{
   display: flex;
@@ -53,13 +54,52 @@
   bottom: 10px;
   padding: 10px;
   margin-right: 10px;
-  background-color: var(--color-primary);
+  background-color: var(--color-button-secondary);
   color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .btn-container button:hover{
-  background-color: white;
-  color: var(--color-primary);
+  background-color: var(--color-button-secondary-hover);
+  color: white;
 }
+
+:host-context(.dark-theme) .btn-container button {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+:host-context(.dark-theme) .btn-container button:hover {
+  background-color: var(--color-button-secondary-hover) !important;
+  color: white !important;
+}
+
+/* Estilos para botones del diálogo en modo oscuro */
+:host-context(.dark-theme) ::ng-deep .p-button {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+:host-context(.dark-theme) ::ng-deep .p-button:hover {
+  background-color: var(--color-button-secondary-hover) !important;
+  border-color: var(--color-button-secondary-hover) !important;
+  color: white !important;
+}
+
+:host-context(.dark-theme) ::ng-deep .p-button-secondary {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:host-context(.dark-theme) ::ng-deep .p-button-secondary:hover {
+  background-color: var(--border-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
 /*Dialog*/
 .profile-upload {
   display: flex;
@@ -68,15 +108,15 @@
 }
 
 .image-preview {
-  width: 100px; /* Ajusta el tamaño según sea necesario */
+  width: 100px;
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0; /* Fondo por defecto */
-  margin-bottom: 10px; /* Espaciado */
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
 }
 
 .image-preview img {
@@ -100,7 +140,7 @@
 }
 
 input[type="file"] {
-  display: none; /* Oculta el input de archivo */
+  display: none;
 }
 .field-logo{
   display:flex;
@@ -111,7 +151,6 @@ input[type="file"] {
   font-size: 1rem;
   margin: 10px 0;
   flex-direction: column;
-
 }
 .general-information{
   display: flex;
@@ -120,5 +159,9 @@ input[type="file"] {
   gap: 5px;
 }
 .password button{
-  background-color:var(--color-terciary);
+  background-color:var(--color-terciary) !important;
+}
+
+:host-context(.dark-theme) .password button{
+  background-color:var(--color-terciary) !important;
 }

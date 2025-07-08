@@ -4,8 +4,6 @@
   align-items: center;
   height: 60px;
   margin: auto;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
   z-index: 10;
   padding: 10px 20px;
   border-radius: 10px;
@@ -31,4 +29,60 @@
 .search-bar button:hover{
   background-color: var(--color-terciary);
   color: white;
+}
+
+/* Estilos específicos para modo oscuro */
+.dark-theme .search-bar {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+}
+
+.dark-theme .search-bar input {
+  background-color: var(--surface-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .search-bar input:focus {
+  border-color: var(--color-button-secondary);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.2);
+}
+
+.dark-theme .search-bar .p-inputtext {
+  background-color: var(--surface-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .search-bar .p-button {
+  background-color: var(--color-button-secondary);
+  border-color: var(--color-button-secondary);
+  color: white;
+}
+
+.dark-theme .search-bar .p-button:hover {
+  background-color: var(--color-button-secondary-hover);
+  border-color: var(--color-button-secondary-hover);
+}
+
+/* Botón de clear específico */
+.dark-theme .search-bar .p-button-text {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+.dark-theme .search-bar .p-button-text:hover {
+  background-color: rgba(248, 250, 252, 0.1);
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+/* Clear button icon */
+.dark-theme .search-bar .p-button-text .pi {
+  color: var(--text-primary);
+}
+
+.dark-theme .search-bar .p-button-text:hover .pi {
+  color: var(--text-primary);
 }

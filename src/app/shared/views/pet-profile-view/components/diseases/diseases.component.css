@@ -4,25 +4,54 @@
   border: none;
   padding: 10px;
   border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
+
 .button-secondary:hover{
   background-color: var(--color-button-secondary-hover);
 }
+
 .form-medical-result{
-  padding:15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  width: 300px; /* Ajusta el ancho máximo según sea necesario */
-  margin: 0 auto; /* Centra el contenedor */
-  background: #fff; /* Fondo blanco para la cinta */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+  width: 300px;
+  margin: 0 auto;
+  background-color: var(--surface-card);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
+
 .input{
-  background-color:whitesmoke;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
+
 .results-container{
   max-height: 300px;
   overflow-y: auto;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  padding: 10px;
+}
 
+/* Estilos específicos para modo oscuro */
+.dark-theme .form-medical-result{
+  background-color: var(--surface-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .input{
+  background-color: var(--surface-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .results-container{
+  background-color: var(--bg-primary);
 }

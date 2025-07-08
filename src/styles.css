@@ -1,33 +1,815 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 
 @layer tailwind-base, primeng, tailwind-utilities;
 @layer tailwind-base {
-@tailwind base;
+  @tailwind base;
 }
 @layer primeng;
 @layer tailwind-utilities {
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 }
 
-
-html, body { margin: 0;
-    @apply font-sans;
-  background: white;
+html, body {
+  margin: 0;
+  @apply font-sans;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-:root{
+
+:root {
   --color-primary: #1a202c;
   --color-white: #fff;
-  --color-button-secondary: #EB5569;
-  --color-terciary: #307176;
-  --color-button-secondary-hover: #E36275FF;
+  --color-button-secondary: #3b82f6;
+  --color-terciary: #1e40af;
+  --color-button-secondary-hover: #2563eb;
+  --navbar-bg: #1e293b;
+  --navbar-text: #f8fafc;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --surface-card: #ffffff;
+  --surface-ground: #f8f9fa;
+  --surface-section: #ffffff;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #1e40af;
+  --sidebar-hover: #f8f9fa;
 }
-.title-section{
+
+.dark-theme {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #0f1629;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #1e293b;
+  --color-primary: #f8fafc;
+  --color-button-secondary: #1e3a8a;
+  --color-terciary: #1e40af;
+  --color-button-secondary-hover: #1e293b;
+  --navbar-bg: #0a0f1a;
+  --navbar-text: #f8fafc;
+  --surface-card: #0f1629;
+  --surface-ground: #0a0f1a;
+  --surface-section: #0f1629;
+  --sidebar-bg: #0a0f1a;
+  --sidebar-text: #94a3b8;
+  --sidebar-hover: #0f1629;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.title-section {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px 0;
   text-align: center;
+  color: var(--text-primary);
+}
+
+/* =========================
+   INPUTS Y FORMULARIOS
+   ========================= */
+.dark-theme .p-inputtext,
+.dark-theme .p-dropdown,
+.dark-theme .p-calendar,
+.dark-theme .p-textarea,
+.dark-theme .p-inputtextarea,
+.dark-theme .p-password input,
+.dark-theme .p-inputnumber input,
+.dark-theme .p-chips input,
+.dark-theme .p-autocomplete input,
+.dark-theme .p-multiselect,
+.dark-theme .p-listbox,
+.dark-theme .p-selectbutton .p-button,
+.dark-theme .p-togglebutton .p-button {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-float-label label {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme .p-inputtext:focus,
+.dark-theme .p-dropdown:focus,
+.dark-theme .p-calendar:focus,
+.dark-theme .p-textarea:focus,
+.dark-theme .p-inputtextarea:focus,
+.dark-theme .p-password input:focus,
+.dark-theme .p-inputnumber input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(235, 85, 105, 0.2) !important;
+  border-color: var(--color-button-secondary) !important;
+}
+
+/* =========================
+   BOTONES
+   ========================= */
+.dark-theme .p-button {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-button:hover {
+  background-color: var(--color-button-secondary-hover) !important;
+  border-color: var(--color-button-secondary-hover) !important;
+  color: white !important;
+}
+
+.dark-theme .p-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(235, 85, 105, 0.2) !important;
+}
+
+.dark-theme .p-button:active {
+  background-color: var(--color-button-secondary-hover) !important;
+  border-color: var(--color-button-secondary-hover) !important;
+}
+
+/* Botones secundarios */
+.dark-theme .p-button-secondary {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-button-secondary:hover {
+  background-color: var(--border-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Botones de texto */
+.dark-theme .p-button-text {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-button-text:hover {
+  background-color: rgba(226, 232, 240, 0.1) !important;
+  border-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+/* Botones outlined */
+.dark-theme .p-button-outlined {
+  background-color: transparent !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-button-outlined:hover {
+  background-color: var(--border-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Botones con severidad */
+.dark-theme .p-button-success {
+  background-color: #059669 !important;
+  border-color: #059669 !important;
+  color: white !important;
+}
+
+.dark-theme .p-button-warning {
+  background-color: #d97706 !important;
+  border-color: #d97706 !important;
+  color: white !important;
+}
+
+.dark-theme .p-button-danger {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: white !important;
+}
+
+.dark-theme .p-button-info {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: white !important;
+}
+
+/* =========================
+   CARDS Y CONTENEDORES
+   ========================= */
+.dark-theme .p-card {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-card .p-card-body {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-card .p-card-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dark-theme .p-card .p-card-title {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-card .p-card-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme .p-card .p-card-content {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .card {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* =========================
+   DIÁLOGOS Y OVERLAYS
+   ========================= */
+.dark-theme .p-dialog {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dialog .p-dialog-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dark-theme .p-dialog .p-dialog-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dialog .p-dialog-footer {
+  background-color: var(--surface-card) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.dark-theme .p-overlaypanel {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-overlaypanel .p-overlaypanel-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-tooltip {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-tooltip-arrow {
+  border-color: var(--surface-card) !important;
+}
+
+/* =========================
+   DROPDOWNS Y LISTAS
+   ========================= */
+.dark-theme .p-dropdown-panel {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-dropdown-item {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dropdown-item:hover {
+  background-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dropdown-item.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-dropdown-empty-message {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme .p-listbox {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-listbox .p-listbox-item {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-listbox .p-listbox-item:hover {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-listbox .p-listbox-item.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+/* =========================
+   CALENDAR Y FECHA
+   ========================= */
+.dark-theme .p-datepicker {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-datepicker .p-datepicker-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-datepicker .p-datepicker-calendar td {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-datepicker .p-datepicker-calendar td.p-datepicker-today {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-datepicker .p-datepicker-calendar td:hover {
+  background-color: var(--border-color) !important;
+}
+
+/* =========================
+   FILE UPLOAD
+   ========================= */
+.dark-theme .p-fileupload {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-fileupload .p-fileupload-buttonbar {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-fileupload .p-fileupload-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-fileupload .p-progressbar {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-fileupload .p-progressbar .p-progressbar-value {
+  background-color: var(--color-button-secondary) !important;
+}
+
+/* =========================
+   TOAST Y MESSAGES
+   ========================= */
+.dark-theme .p-toast {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-toast .p-toast-message {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-toast .p-toast-message-content {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-toast .p-toast-icon {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-messages {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-message {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* =========================
+   NAVIGATION Y SIDEBAR
+   ========================= */
+.dark-theme .p-sidebar {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-sidebar .p-sidebar-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-sidebar .p-sidebar-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Sidebar específico de tu aplicación */
+.dark-theme aside {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.dark-theme .bg-customSidebar {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.dark-theme .text-customBlue {
+  color: var(--sidebar-text) !important;
+}
+
+.dark-theme aside a {
+  color: var(--sidebar-text) !important;
+}
+
+.dark-theme aside a:hover {
+  background-color: var(--sidebar-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme aside a.active {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme aside i {
+  color: var(--sidebar-text) !important;
+}
+
+.dark-theme .p-menu {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-menu .p-menuitem-link {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-menu .p-menuitem-link:hover {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-menubar {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-menubar .p-menuitem-link {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-menubar .p-menuitem-link:hover {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-breadcrumb {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-breadcrumb .p-breadcrumb-list li a {
+  color: var(--text-primary) !important;
+}
+
+/* =========================
+   TABLAS Y DATOS
+   ========================= */
+.dark-theme .p-datatable {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-datatable .p-datatable-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-datatable .p-datatable-tbody > tr {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-datatable .p-datatable-tbody > tr:hover {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-datatable .p-datatable-thead > tr > th {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-datatable .p-datatable-footer {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-paginator {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-paginator .p-paginator-pages .p-paginator-page {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+/* =========================
+   PANELS Y LAYOUTS
+   ========================= */
+.dark-theme .p-panel {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-panel .p-panel-header {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dark-theme .p-panel .p-panel-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-toolbar {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-tabview {
+  background-color: var(--surface-card) !important;
+}
+
+.dark-theme .p-tabview .p-tabview-nav {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-tabview .p-tabview-nav .p-tabview-nav-link {
+  color: var(--text-primary) !important;
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-tabview .p-tabview-nav .p-tabview-nav-link.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-tabview .p-tabview-panels {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-accordion {
+  background-color: var(--surface-card) !important;
+}
+
+.dark-theme .p-accordion .p-accordion-header-link {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-accordion .p-accordion-header.p-highlight .p-accordion-header-link {
+  background-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-accordion .p-accordion-content {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-fieldset {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-fieldset .p-fieldset-legend {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+}
+
+/* =========================
+   INPUTS ESPECIALES
+   ========================= */
+.dark-theme .p-checkbox {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-checkbox .p-checkbox-box {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-checkbox .p-checkbox-box.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+}
+
+.dark-theme .p-radiobutton .p-radiobutton-box {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .p-radiobutton .p-radiobutton-box.p-highlight {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+}
+
+.dark-theme .p-inputswitch {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-inputswitch.p-inputswitch-checked {
+  background-color: var(--color-button-secondary) !important;
+}
+
+.dark-theme .p-slider {
+  background-color: var(--border-color) !important;
+}
+
+.dark-theme .p-slider .p-slider-handle {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+}
+
+.dark-theme .p-slider .p-slider-range {
+  background-color: var(--color-button-secondary) !important;
+}
+
+/* =========================
+   SCROLLBARS
+   ========================= */
+.dark-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--surface-card);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* =========================
+   ELEMENTOS GENERALES
+   ========================= */
+.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6 {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme p, .dark-theme span, .dark-theme div {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme label {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-component {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-disabled {
+  opacity: 0.5 !important;
+}
+
+.dark-theme .p-link {
+  color: var(--color-button-secondary) !important;
+}
+
+.dark-theme .p-link:hover {
+  color: var(--color-button-secondary-hover) !important;
+}
+
+/* =========================
+   NAVBAR - COLORES OSCUROS
+   ========================= */
+.nav-bar {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-text) !important;
+}
+
+.nav-bar * {
+  color: var(--navbar-text) !important;
+}
+
+.nav-bar .p-dropdown {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: var(--navbar-text) !important;
+}
+
+.nav-bar .p-dropdown:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.nav-bar .p-dropdown .p-dropdown-label {
+  color: var(--navbar-text) !important;
+}
+
+.nav-bar .p-dropdown .p-dropdown-trigger {
+  color: var(--navbar-text) !important;
+}
+
+.nav-bar img {
+  filter: brightness(1.1);
+}
+
+/* =========================
+   FIXES ESPECÍFICOS
+   ========================= */
+.dark-theme .p-button.p-component {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+  color: white !important;
+}
+
+.dark-theme .p-button.p-component:hover {
+  background-color: var(--color-button-secondary-hover) !important;
+  border-color: var(--color-button-secondary-hover) !important;
+  color: white !important;
+}
+
+.dark-theme .p-button.p-button-secondary.p-component {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-button.p-button-secondary.p-component:hover {
+  background-color: var(--border-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Force override para elementos stubborn */
+.dark-theme .p-inputtext.p-component {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dropdown.p-component {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-card.p-component {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .p-dialog.p-component {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
 }

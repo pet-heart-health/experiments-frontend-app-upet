@@ -10,6 +10,7 @@ import {VeterinarianSchemaResponse} from "../../../core/Veterinarian/schema/vete
 import {TranslateService} from "@ngx-translate/core";
 import {DropdownModule} from "primeng/dropdown";
 import {FormsModule} from "@angular/forms";
+import {ThemeToggleComponent} from "../theme-toggle/theme-toggle.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     NgOptimizedImage,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    ThemeToggleComponent
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
@@ -32,7 +34,7 @@ export class NavBarComponent {
     {label:"Japanese", value:"ja", icon:"pi pi-globe"},
   ];
 
-  selectedLanguage: string;
+  selectedLanguage: any;
 
   constructor(
     private authService: AuthService,
@@ -56,7 +58,6 @@ export class NavBarComponent {
 
     let defaultLanguage = this.transalateService.getBrowserLang();
     this.selectedLanguage = this.languages.find(l => l.value === defaultLanguage);
-
   }
 
   switchLanguage(language: any) {

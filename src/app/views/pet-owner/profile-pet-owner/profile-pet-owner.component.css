@@ -51,12 +51,14 @@
   bottom: 10px;
   padding: 10px;
   margin-right: 10px;
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+  border: none;
+  transition: background-color 0.3s ease;
 }
 .btn-container button:hover{
-  background-color: white;
-  color: var(--color-primary);
+  background-color: var(--color-button-secondary-hover);
+  color: var(--color-white);
 }
 /*Dialog*/
 .profile-upload {
@@ -99,4 +101,29 @@
 
 input[type="file"] {
   display: none; /* Oculta el input de archivo */
+}
+
+/* Estilos específicos para modo oscuro */
+.dark-theme .btn-container button{
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+}
+
+.dark-theme .btn-container button:hover{
+  background-color: var(--color-button-secondary-hover);
+  color: var(--color-white);
+}
+
+.dark-theme .custom-file-upload {
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+}
+
+.dark-theme .custom-file-upload:hover {
+  background-color: var(--color-button-secondary-hover);
+}
+
+.dark-theme .image-preview {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
 }

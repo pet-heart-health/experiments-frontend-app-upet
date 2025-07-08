@@ -3,30 +3,60 @@
   height: 100%;
   object-fit: cover;
 }
+
 .header-container{
-  background-color:var(--color-primary);
-  min-width:100%;
-  color:white;
+  background-color: var(--navbar-bg);
+  min-width: 100%;
+  color: var(--navbar-text);
 }
+
 .section-title{
-  font-size:1.2rem;
-  font-weight:bolder;
-  margin-bottom:10px;
-  color:var(--color-terciary);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  color: var(--text-primary);
 }
+
 .block-information .title{
-  font-size:1.0rem;
-  font-weight:bolder;
+  font-size: 1.0rem;
+  font-weight: bolder;
+  color: var(--text-primary);
 }
 
 .btn-book{
-  background-color:var(--color-button-secondary);
-  color:white;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-  font-size:0.8rem;
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
 }
+
 .btn-book:hover{
-  background-color:var(--color-button-secondary-hover);
+  background-color: var(--color-button-secondary-hover);
+}
+
+/* Estilos específicos para modo oscuro */
+.dark-theme .header-container{
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.dark-theme .section-title{
+  color: var(--text-primary);
+}
+
+.dark-theme .block-information .title{
+  color: var(--text-primary);
+}
+
+.dark-theme .btn-book{
+  background-color: var(--color-button-secondary);
+  color: var(--color-white);
+}
+
+.dark-theme .btn-book:hover{
+  background-color: var(--color-button-secondary-hover);
 }
